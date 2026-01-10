@@ -1,5 +1,14 @@
 /* --- assets/js/script.js --- */
-
+/* --- АВТОМАТИЧНЕ ДОДАВАННЯ ЛОГОТИПУ (FAVICON) --- */
+(function() {
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+    }
+    link.href = 'assets/img/logo.png'; // Шлях до твоєї картинки
+})();
 /* --- АВТОМАТИЧНЕ ДОДАВАННЯ КНОПКИ "НАЗАД" --- */
 // Цей код сам перевіряє, чи є клас inner-page, і вставляє кнопку в шапку
 

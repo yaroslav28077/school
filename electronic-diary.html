@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Електронний щоденник</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .nz-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .nz-title {
+            color: var(--primary-green);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .nz-link-btn {
+            display: inline-block;
+            background: #d84315;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px 0;
+            box-shadow: 0 4px 10px rgba(216, 67, 21, 0.3);
+        }
+        .nz-link-btn:hover {
+            background: #bf360c;
+            transform: translateY(-2px);
+        }
+        .step-list {
+            list-style: none;
+            counter-reset: my-counter;
+        }
+        .step-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+        }
+        .step-list li::before {
+            counter-increment: my-counter;
+            content: counter(my-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .screenshot-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            color: #777;
+            border-radius: 8px;
+        }
+        .screenshot-img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Електронний щоденник</h1>
+                
+                <div class="nz-section" style="text-align: center;">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                        Українська класична гімназія ЛМР працює на порталі <strong>“Нові Знання”</strong> — українська платформа з електронними щоденниками та журналами з можливостями дистанційного навчання.
+                    </p>
+                    
+                    <a href="https://nz.ua/" target="_blank" class="nz-link-btn">🚀 Перейти на сайт NZ.UA</a>
+                    
+                    <div style="margin-top: 20px; background: #e8f5e9; padding: 15px; border-radius: 8px; display: inline-block;">
+                        <strong>📱 Додатки для смартфонів:</strong><br>
+                        <a href="#" style="color: var(--primary-green); text-decoration: underline;">Нові Знання Play Market (Android)</a><br>
+                        <a href="#" style="color: var(--primary-green); text-decoration: underline;">Нові Знання AppStore (iOS)</a>
+                    </div>
+                </div>
+
+                <div class="nz-section">
+                    <h3 class="nz-title">🔐 Як увійти в систему?</h3>
+                    <ol class="step-list">
+                        <li>Перейдіть на сайт <strong>nz.ua</strong>.</li>
+                        <li>Натисніть кнопку <strong>"Увійти"</strong> у верхній частині сайту.</li>
+                        <li>Введіть ваш <strong>Логін</strong> та <strong>Пароль</strong>, який ви отримали у класного керівника.</li>
+                        <li>Натисніть кнопку "Увійти до кабінету".</li>
+                    </ol>
+                    <img src="assets/img/nz-login.jpg" alt="Скріншот входу" class="screenshot-img" onerror="this.style.display='none'">
+                </div>
+
+                <div class="nz-section">
+                    <h3 class="nz-title">❓ Забули пароль?</h3>
+                    <p>Якщо система пише "Неправильне ім'я користувача або пароль!":</p>
+                    <ol class="step-list">
+                        <li>Перевірте введену інформацію.</li>
+                        <li>Якщо не впевнені, натисніть кнопку <strong>"Нагадати"</strong> (біля поля паролю).</li>
+                        <li>Введіть вашу електронну пошту та натисніть "Відправити".</li>
+                        <li>На вашу пошту прийде спеціальний лист для відновлення.</li>
+                    </ol>
+                    <img src="assets/img/nz-recovery.jpg" alt="Відновлення паролю" class="screenshot-img" onerror="this.style.display='none'">
+                </div>
+
+                <div class="nz-section">
+                    <h3 class="nz-title">📚 Робота із щоденником</h3>
+                    <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+                        <li>У головному меню оберіть розділ <strong>«Щоденник»</strong>.</li>
+                        <li>За допомогою стрілок можна перемикатись між тижнями.</li>
+                        <li>Якщо біля оцінки є трикутник — наведіть курсор, щоб прочитати коментар вчителя.</li>
+                        <li>Доступні функції: <strong>«Версія для друку»</strong>, <strong>«Табель»</strong>, <strong>«Виписка оцінок»</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="nz-section" style="background: #e3f2fd; border: 2px solid #2196f3; text-align: center;">
+                    <h3 class="nz-title" style="color: #1565c0; border-color: #bbdefb;">📄 Інструкція для учнів та батьків</h3>
+                    <p style="margin-bottom: 20px;">Детальна покрокова інструкція з використанням скріншотів.</p>
+                    
+                    <a href="https://forkids.org.ua/wp-content/uploads/2024/01/nz-instrukcziya-dlya-uchniv-i-batkiv-29.07.22-2.pdf" target="_blank" class="nz-link-btn" style="background: #1976d2;">
+                        📥 Завантажити інструкцію (PDF)
+                    </a>
+                    
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        Більше інформації на офіційному сайті підтримки: <a href="https://nz.ua/page/support" target="_blank" style="text-decoration: underline;">nz.ua/page/support</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кадровий склад</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .staff-summary {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 6px solid var(--primary-green);
+        }
+
+        .main-stat {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            line-height: 1;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .stats-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stats-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            transition: 0.3s;
+        }
+
+        .stats-list li:hover {
+            background: #e8f5e9;
+            transform: translateX(5px);
+        }
+
+        .count-badge {
+            background: var(--accent-orange);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .check-icon {
+            color: var(--primary-green);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Кадровий склад</h1>
+                
+                <div class="staff-summary">
+                    <div class="main-stat">
+                        <span class="stat-number">32</span>
+                        <span class="stat-label">Всього педагогічних працівників у закладі</span>
+                    </div>
+
+                    <h3 style="margin-bottom: 20px; color: var(--text-dark); font-family: 'Montserrat', sans-serif;">Якісний склад педагогічного колективу:</h3>
+                    
+                    <ul class="stats-list">
+                        <li>
+                            <span><span class="check-icon">✔</span> Мають вищу освіту</span>
+                            <span class="count-badge" style="background: var(--primary-green);">32</span>
+                        </li>
+                        <li>
+                            <span><span class="check-icon">✔</span> Учителів вищої кваліфікаційної категорії</span>
+                            <span class="count-badge">22</span>
+                        </li>
+                        <li>
+                            <span><span class="check-icon">✔</span> Учителів першої кваліфікаційної категорії</span>
+                            <span class="count-badge">8</span>
+                        </li>
+                        <li>
+                            <span><span class="check-icon">✔</span> Мають звання «Учитель-методист»</span>
+                            <span class="count-badge">7</span>
+                        </li>
+                        <li>
+                            <span><span class="check-icon">✔</span> Мають звання «Старший учитель»</span>
+                            <span class="count-badge">10</span>
+                        </li>
+                        <li>
+                            <span><span class="check-icon">✔</span> Педагогів, які досягли пенсійного віку</span>
+                            <span class="count-badge" style="background: #999;">4</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

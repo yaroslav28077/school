@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Історія гімназії</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .history-card {
+            background: white;
+            padding: 60px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 40px auto;
+            border-top: 8px solid var(--primary-green);
+        }
+        .history-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+        .history-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green), #2e7d32);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+            font-size: 1.1rem;
+            margin-top: 30px;
+        }
+        .history-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.6);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Історія гімназії</h1>
+
+                <div class="history-card">
+                    <span class="history-icon">📜</span>
+                    <h2 style="font-family: 'Montserrat'; color: #333; margin-bottom: 15px;">Славетний шлях нашого закладу</h2>
+                    <p style="color: #666; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
+                        Від залізничного училища 1917 року до сучасної Української класичної гімназії. Дізнайтеся про героїчне минуле, етапи становлення та видатних особистостей нашого закладу.
+                    </p>
+                    
+                    <a href="https://drive.google.com/file/d/1O6PwUTPzSR39V9lcwTG7f4emUi6tri40/view?usp=sharing" target="_blank" class="history-btn">
+                        📖 Читати повну історію
+                    </a>
+                    
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">
+                        (Документ відкриється у новій вкладці)
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

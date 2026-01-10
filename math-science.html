@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Природничо-математичні науки</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .teacher-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 4px solid var(--primary-green);
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .teacher-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+            background: #f0f0f0;
+        }
+
+        .teacher-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .teacher-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .teacher-subject {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .teacher-details {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .cat-label {
+            display: block;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Професійна спільнота вчителів природничо-математичних наук</h1>
+                
+                <div class="teachers-grid">
+                    
+                    <div class="teacher-card">
+                        <img src="assets/img/t-baran.jpg" alt="Баран Л.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
+                        <div class="teacher-info">
+                            <div class="teacher-name">Баран Людмила В’ячеславівна</div>
+                            <div class="teacher-subject">Вчитель географії та курсу "Пізнаємо природу"</div>
+                            <div class="teacher-details">
+                                <span class="cat-label">Спеціаліст І категорії</span>
+                                <strong>Стаж роботи: 9 років</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card">
+                        <img src="assets/img/t-vashchenko.jpg" alt="Ващенко О.Г." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
+                        <div class="teacher-info">
+                            <div class="teacher-name">Ващенко Олександра Григорівна</div>
+                            <div class="teacher-subject">Вчитель хімії та географії</div>
+                            <div class="teacher-details">
+                                <span class="cat-label">Спеціаліст вищої категорії</span>
+                                <strong>Стаж роботи: 18 років</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card">
+                        <img src="assets/img/t-hrytsai.jpg" alt="Грицай Т.А." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
+                        <div class="teacher-info">
+                            <div class="teacher-name">Грицай Тетяна Анатоліївна</div>
+                            <div class="teacher-subject">Вчитель інформатики та СШП</div>
+                            <div class="teacher-details">
+                                <span class="cat-label">Спеціаліст вищої категорії</span>
+                                <span class="cat-label">Учитель-методист</span>
+                                <strong>Стаж роботи: 20 років</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card">
+                        <img src="assets/img/t-liabakh.jpg" alt="Лябах Н.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
+                        <div class="teacher-info">
+                            <div class="teacher-name">Лябах Наталія Василівна</div>
+                            <div class="teacher-subject">Вчитель математики</div>
+                            <div class="teacher-details">
+                                <span class="cat-label">Спеціаліст вищої категорії</span>
+                                <span class="cat-label">Старший учитель</span>
+                                <strong>Стаж роботи: 37 років</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="teacher-card">
+                        <img src="assets/img/t-shyp.jpg" alt="Шип С.М." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
+                        <div class="teacher-info">
+                            <div class="teacher-name">Шип Світлана Миколаївна</div>
+                            <div class="teacher-subject">Вчитель фізики та математики</div>
+                            <div class="teacher-details">
+                                <span class="cat-label">Спеціаліст вищої категорії</span>
+                                <span class="cat-label">Старший учитель</span>
+                                <strong>Стаж роботи: 21 рік</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

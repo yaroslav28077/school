@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учнівське самоврядування</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Стиль для Президента */
+        .president-section {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        @media (min-width: 768px) {
+            .president-section {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .pres-photo-box {
+            flex: 0 0 40%;
+            height: 450px; /* Трохи збільшив висоту для фото */
+        }
+
+        .pres-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .pres-info {
+            flex: 1;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .pres-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pres-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .pres-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+            background: #fdf5e6;
+            padding: 20px;
+            border-radius: 0 20px 0 20px;
+            position: relative;
+        }
+
+        .pres-quote::before {
+            content: '❝';
+            font-size: 3rem;
+            color: var(--accent-orange);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        /* Стиль для Міністерств */
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .ministry-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #ccc; /* Колір за замовчуванням */
+            transition: 0.3s;
+            height: 100%;
+        }
+        
+        .ministry-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+
+        /* Кольори згідно зі схемою на фото */
+        .min-education { border-top-color: #2e4d28; } /* Темно-зелений */
+        .min-culture { border-top-color: #d35400; }   /* Помаранчевий */
+        .min-sport { border-top-color: #1b3a27; }     /* Темно-зелений */
+        .min-discipline { border-top-color: #e67e22; } /* Світло-помаранчевий */
+        .min-info { border-top-color: #14301f; }      /* Темно-зелений */
+
+        .min-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #333;
+            display: flex;
+            align-items: flex-start;
+            min-height: 50px; /* Щоб заголовки були на одному рівні */
+        }
+
+        .min-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            line-height: 1;
+        }
+
+        .student-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .student-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .student-list li::before {
+            content: '•';
+            color: var(--primary-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .student-list li:last-child { border-bottom: none; }
+
+        .group-photo-container {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .group-photo {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Учнівське самоврядування «ЛІДЕР»</h1>
+                
+                <div class="president-section">
+                    <div class="pres-photo-box">
+                        <img src="assets/img/student-president.jpg" alt="Поліна Левенець" class="pres-photo" onerror="this.src='assets/img/logo.png'">
+                    </div>
+                    <div class="pres-info">
+                        <span class="pres-label">Президент учнівського самоврядування</span>
+                        <div class="pres-name">Поліна Левенець</div>
+                        <div class="pres-quote">
+                            "Мене завжди приваблювала можливість брати участь у громадському житті, пропонувати нові ідеї та бути причетною до їх реалізації."
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="text-align: center; margin-bottom: 40px; color: var(--text-dark); text-transform: uppercase;">Склад уряду учнівського самоврядування</h2>
+
+                <div class="ministries-grid">
+                    
+                    <div class="ministry-card min-education">
+                        <div class="min-title"><span class="min-icon">📚</span> Міністерство освіти та науки</div>
+                        <ul class="student-list">
+                            <li>Мащенко Дарина</li>
+                            <li>Грабко Ярослав</li>
+                            <li>Головань Анастасія</li>
+                            <li>Гапченко Софія</li>
+                        </ul>
+                    </div>
+
+                    <div class="ministry-card min-culture">
+                        <div class="min-title"><span class="min-icon">🎭</span> Міністерство культури та дозвілля</div>
+                        <ul class="student-list">
+                            <li>Кравченко Євгенія</li>
+                            <li>Даценко Артем</li>
+                            <li>Левенець Поліна</li>
+                            <li>Крицун Єлизавета</li>
+                        </ul>
+                    </div>
+
+                    <div class="ministry-card min-sport">
+                        <div class="min-title"><span class="min-icon">⚽</span> Міністерство спорту і здоров'я</div>
+                        <ul class="student-list">
+                            <li>Ходос Ліана</li>
+                            <li>Ємельянов Руслан</li>
+                            <li>Свічка Матвій</li>
+                            <li>Карабут Дар'я</li>
+                        </ul>
+                    </div>
+
+                    <div class="ministry-card min-discipline">
+                        <div class="min-title"><span class="min-icon">⚖️</span> Міністерство дисципліни та порядку</div>
+                        <ul class="student-list">
+                            <li>Левакова Софія</li>
+                            <li>Григор'єв Володимир</li>
+                            <li>Галін Назар</li>
+                            <li>Кондратенко Дар'я</li>
+                        </ul>
+                    </div>
+
+                    <div class="ministry-card min-info">
+                        <div class="min-title"><span class="min-icon">📢</span> Міністерство інформації та зв'язків з громадськістю</div>
+                        <ul class="student-list">
+                            <li>Сушко Крістіна</li>
+                            <li>Остапенко Ярослав</li>
+                            <li>Остроух Злата</li>
+                            <li>Канівець Дмитро</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="group-photo-container">
+                    <img src="assets/img/student-group.jpg" alt="Учнівське самоврядування" class="group-photo" onerror="this.style.display='none'">
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учительська спільнота</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .community-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-bottom: 5px solid transparent;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-bottom-color: var(--primary-green);
+        }
+        .comm-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: #f1f8e9;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--primary-green);
+        }
+        .comm-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .comm-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Учительська спільнота</h1>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; color: #555;">
+                    Педагогічний колектив гімназії — це команда професіоналів, об'єднаних спільною метою виховання та навчання нового покоління.
+                </p>
+
+                <div class="community-grid">
+                    
+                    <a href="humanities.html" class="community-card">
+                        <div class="comm-icon">📚</div>
+                        <div class="comm-title">Суспільно-гуманітарні науки</div>
+                        <div class="comm-desc">Українська мова та література, історія, правознавство, іноземні мови.</div>
+                    </a>
+
+                    <a href="math-science.html" class="community-card">
+                        <div class="comm-icon">🔬</div>
+                        <div class="comm-title">Природничо-математичні науки</div>
+                        <div class="comm-desc">Математика, фізика, інформатика, біологія, хімія, географія.</div>
+                    </a>
+
+                    <a href="arts-health.html" class="community-card">
+                        <div class="comm-icon">🎨</div>
+                        <div class="comm-title">Художньо-оздоровчий цикл</div>
+                        <div class="comm-desc">Фізична культура, образотворче мистецтво, музичне мистецтво, технології.</div>
+                    </a>
+
+                    <a href="primary-school.html" class="community-card">
+                        <div class="comm-icon">🧸</div>
+                        <div class="comm-title">Вчителі початкових класів</div>
+                        <div class="comm-desc">Вихователі та вчителі 1-4 класів (НУШ).</div>
+                    </a>
+
+                    <a href="class-teachers.html" class="community-card">
+                        <div class="comm-icon">👩‍🏫</div>
+                        <div class="comm-title">Класні керівники</div>
+                        <div class="comm-desc">Методичне об'єднання класних керівників 5-11 класів.</div>
+                    </a>
+
+                    <a href="#" class="community-card">
+                        <div class="comm-icon">🤝</div>
+                        <div class="comm-title">Асистенти вчителів</div>
+                        <div class="comm-desc">Інклюзивна освіта та супровід дітей з особливими освітніми потребами.</div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

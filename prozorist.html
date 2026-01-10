@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прозорість та відкритість</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 2000; opacity: 0; transition: opacity 0.3s; }
+        .modal-overlay.open { display: flex; opacity: 1; }
+        .modal-window { background: white; width: 90%; max-width: 400px; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translateY(20px); transition: transform 0.3s; position: relative; }
+        .modal-overlay.open .modal-window { transform: translateY(0); }
+        .modal-title { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: var(--primary-green); margin-bottom: 20px; }
+        .year-btn { display: block; width: 100%; padding: 15px; margin-bottom: 10px; background: #f4f7f6; color: #333; font-weight: 600; border-radius: 10px; transition: 0.2s; border: 1px solid #eee; }
+        .year-btn:hover { background: var(--primary-green); color: white; transform: scale(1.02); }
+        .close-modal { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; color: #999; }
+        .close-modal:hover { color: #333; }
+    </style>
+</head>
+<body class="inner-page">
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
+                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
+            </a>
+            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
+            <div class="burger"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Прозорість та інформаційна відкритість</h1>
+                <div class="links-container">
+                    <a href="documents.html" class="doc-link"><span class="doc-icon">📜</span> Статутні документи закладу</a>
+                    <a href="#" class="doc-link" id="openReports"><span class="doc-icon">📊</span> Звіти директора гімназії <span style="margin-left: auto; font-size: 0.8rem; color: #888;">(Натисніть для вибору)</span></a>
+                    <a href="atestacia.html" class="doc-link"><span class="doc-icon">🎓</span> Атестація педагогічних працівників</a>
+                    <a href="samoanaliz.html" class="doc-link"><span class="doc-icon">🔍</span> Самоаналіз діяльності</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="reportsModal">
+        <div class="modal-window">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h3 class="modal-title">Оберіть рік звіту</h3>
+            <a href="zvit2025.html" class="year-btn">2025 рік</a>
+            <a href="zvit2024.html" class="year-btn">2024 рік</a>
+            <a href="zvit2023.html" class="year-btn">2023 рік</a>
+        </div>
+    </div>
+    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/script.js"></script>
+    <script>
+        const modal = document.getElementById('reportsModal');
+        const openBtn = document.getElementById('openReports');
+        const closeBtn = document.getElementById('closeModal');
+        openBtn.addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('open'); });
+        closeBtn.addEventListener('click', () => { modal.classList.remove('open'); });
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+    </script>
+</body>
+</html>

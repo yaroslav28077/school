@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінку не знайдено | 404</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Стилі суто для цієї сторінки */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: var(--bg-color);
+            padding: 20px;
+        }
+        
+        .error-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .error-text {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            background-color: var(--dark-green);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h2 class="error-title">Ой! Ви заблукали...</h2>
+        <p class="error-text">Сторінка, яку ви шукаєте, була видалена або її ніколи не існувало.</p>
+        
+        <a href="index.html" class="btn-home">
+            🏠 Повернутися на головну
+        </a>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

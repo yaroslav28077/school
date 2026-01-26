@@ -1,169 +1,45 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Медична служба</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        .med-hero {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-            border-bottom: 5px solid #00b0ff; /* Медичний блакитний */
-        }
-
-        @media (min-width: 768px) {
-            .med-hero {
-                flex-direction: row;
-                align-items: center;
-                text-align: left;
-            }
-        }
-
-        .med-photo {
-            width: 280px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 3px solid #e1f5fe;
-        }
-
-        @media (min-width: 768px) {
-            .med-photo { margin-right: 40px; margin-bottom: 0; }
-        }
-
-        .med-info h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: #0277bd;
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-
-        .med-role {
-            font-size: 1.1rem;
-            color: #555;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .task-box {
-            background: #e1f5fe;
-            padding: 20px;
-            border-radius: 10px;
-            color: #01579b;
-            font-style: italic;
-            border-left: 5px solid #0288d1;
-            margin-top: 15px;
-        }
-
-        /* Стилі для блоків діяльності */
-        .med-grid {
-            display: grid;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .med-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .med-card-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
-            color: #333;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-
-        .icon-circle {
-            width: 40px;
-            height: 40px;
-            background: #e1f5fe;
-            color: #0288d1;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        .check-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .check-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 12px;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .check-list li::before {
-            content: '✚';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: #0288d1; /* Червоний хрестик можна зробити #d32f2f, але блакитний спокійніший */
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="inner-page">
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
-                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
-            </a>
-            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
-            <div class="burger"><span></span><span></span><span></span></div>
-        </div>
-    </header>
+
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="section">
             <div class="container">
                 <h1 class="page-title">Медична служба гімназії</h1>
-                
+
                 <div class="med-hero">
-                    <img src="assets/img/nurse.jpg" alt="Мирненко Ольга Вікторівна" class="med-photo" onerror="this.src='assets/img/logo.png'">
+                    <img src="assets/img/nurse.jpg" alt="Мирненко Ольга Вікторівна" class="med-photo"
+                        onerror="this.src='assets/img/logo.png'">
                     <div class="med-info">
                         <h2>Мирненко Ольга Вікторівна</h2>
                         <span class="med-role">Медична сестра гімназії</span>
-                        
-                        <p>У процесі виконання посадових обов'язків керується Законами України, постановами уряду та нормативними документами з питань санітарії та гігієни.</p>
+
+                        <p>У процесі виконання посадових обов'язків керується Законами України, постановами уряду та
+                            нормативними документами з питань санітарії та гігієни.</p>
 
                         <div class="task-box">
                             <strong>Головне завдання:</strong><br>
-                            Здійснення медико-профілактичної та оздоровчої роботи з метою зміцнення здоров'я дітей, зниження захворюваності та підвищення стійкості організму.
+                            Здійснення медико-профілактичної та оздоровчої роботи з метою зміцнення здоров'я дітей,
+                            зниження захворюваності та підвищення стійкості організму.
                         </div>
                     </div>
                 </div>
 
                 <div class="med-grid">
-                    
+
                     <div class="med-card">
                         <div class="med-card-title">
                             <div class="icon-circle">📋</div>
@@ -196,7 +72,7 @@
                         </ul>
                     </div>
 
-                    <div class="med-card" style="border-left: 5px solid #0277bd;">
+                    <div class="med-card med-card-blue">
                         <div class="med-card-title">
                             <div class="icon-circle">🔍</div>
                             Контролює:
@@ -214,7 +90,9 @@
             </div>
         </section>
     </main>
-    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+
+    <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

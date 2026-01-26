@@ -1,140 +1,37 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практичний психолог</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        .psychologist-hero {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-            border-bottom: 5px solid var(--primary-green);
-        }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
-        @media (min-width: 768px) {
-            .psychologist-hero {
-                flex-direction: row;
-                align-items: flex-start;
-                text-align: left;
-            }
-        }
-
-        .psy-photo {
-            width: 250px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        @media (min-width: 768px) {
-            .psy-photo { margin-right: 40px; margin-bottom: 0; }
-        }
-
-        .psy-info h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-green);
-            font-size: 2rem;
-            margin-bottom: 5px;
-        }
-
-        .psy-role {
-            font-size: 1.1rem;
-            color: var(--accent-orange);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .psy-theme {
-            background: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            font-style: italic;
-            color: #2e7d32;
-            margin-bottom: 20px;
-        }
-
-        .work-directions {
-            display: grid;
-            gap: 30px;
-        }
-
-        .direction-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .direction-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            color: #333;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .custom-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .custom-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            line-height: 1.5;
-            color: #555;
-        }
-
-        .custom-list li::before {
-            content: '🔹';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 0.8rem;
-        }
-    </style>
 </head>
+
 <body class="inner-page">
-    
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
-                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
-            </a>
-            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
-            <div class="burger"><span></span><span></span><span></span></div>
-        </div>
-    </header>
+
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="section">
             <div class="container">
                 <h1 class="page-title">Психологічна служба гімназії</h1>
-                
+
                 <div class="psychologist-hero">
-                    <img src="assets/img/psychologist.jpg" alt="Вербенець Юлія Володимирівна" class="psy-photo" onerror="this.src='assets/img/logo.png'">
+                    <img src="assets/img/psychologist.jpg" alt="Вербенець Юлія Володимирівна" class="psy-photo"
+                        onerror="this.src='assets/img/logo.png'">
                     <div class="psy-info">
                         <h2>Вербенець Юлія Володимирівна</h2>
                         <span class="psy-role">Практичний психолог</span>
-                        
+
                         <div class="psy-theme">
                             <strong>Тема, над якою працює психологічна служба:</strong><br>
-                            "Упровадження елементів інноваційних технологій для стимулювання розвитку творчого потенціалу обдарованої дитини"
+                            "Упровадження елементів інноваційних технологій для стимулювання розвитку творчого
+                            потенціалу обдарованої дитини"
                         </div>
 
                         <p><strong>Основною метою діяльності психологічної служби є:</strong></p>
@@ -147,7 +44,7 @@
                 </div>
 
                 <div class="work-directions">
-                    
+
                     <div class="direction-card">
                         <h3 class="direction-title">🛠 Напрямки роботи</h3>
                         <ul class="custom-list">
@@ -162,7 +59,8 @@
 
                     <div class="direction-card">
                         <h3 class="direction-title">🎓 Робота з учнями та педагогами</h3>
-                        <div style="display: grid; md:grid-cols-2; gap: 20px;">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                             <div>
                                 <strong>Робота з педагогічним колективом:</strong>
                                 <ul class="custom-list">
@@ -200,7 +98,9 @@
             </div>
         </section>
     </main>
-    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+
+    <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

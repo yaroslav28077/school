@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Розклад (Середня школа)</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="inner-page">
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
-                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
-            </a>
-            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
-            <div class="burger"><span></span><span></span><span></span></div>
-        </div>
-    </header>
+
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="section">
-            <div class="container" style="text-align: center; padding: 80px 0;">
+            <div class="container text-center schedule-container">
                 <h1 class="page-title">Розклад занять (5-9 класи)</h1>
-                
-                <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto;">
+
+                <p class="schedule-text">
                     Розклад оновлюється. Актуальна версія буде додана найближчим часом.
                 </p>
-                <div style="font-size: 5rem; margin-top: 30px; animation: bounce 2s infinite;">📅</div>
-                 <style>
-                    @keyframes bounce {
-                        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-                        40% {transform: translateY(-20px);}
-                        60% {transform: translateY(-10px);}
-                    }
-                </style>
+                <div class="animate-bounce schedule-icon">📅</div>
             </div>
         </section>
     </main>
 
-    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+    <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

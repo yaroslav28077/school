@@ -1,185 +1,124 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Класні керівники</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        .teachers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .teacher-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            border-top: 5px solid var(--accent-orange); /* Помаранчевий верх для класних керівників */
-        }
-
-        .teacher-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .teacher-photo {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            object-position: top;
-            background: #f0f0f0;
-        }
-
-        .teacher-info {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .class-badge-large {
-            background: var(--accent-orange);
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 800;
-            padding: 10px 0;
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .teacher-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 5px;
-            margin-top: 15px;
-        }
-
-        .teacher-role {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="inner-page">
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" alt="Лого" class="logo-img">
-                <div class="logo-text"><span>Українська класична гімназія</span><small>Лубенської міської ради</small></div>
-            </a>
-            <nav class="nav"><a href="index.html" class="nav-link">← На головну</a></nav>
-            <div class="burger"><span></span><span></span><span></span></div>
-        </div>
-    </header>
+
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="section">
             <div class="container">
                 <h1 class="page-title">Класні керівники 5-9 класів</h1>
-                
-                <div class="teachers-grid">
-                    
-                    <div class="teacher-card">
+
+                <div class="card-grid">
+
+                    <div class="card card-orange-top">
                         <div class="class-badge-large">5-А клас</div>
-                        <img src="assets/img/t-vashchenko.jpg" alt="Ващенко О.Г." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Ващенко Олександра Григорівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-vashchenko.jpg" alt="Ващенко О.Г." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Ващенко Олександра Григорівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">5-Б клас</div>
-                        <img src="assets/img/t-shovkoplias.jpg" alt="Шовкопляс Л.А." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Шовкопляс Людмила Анатоліївна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-shovkoplias.jpg" alt="Шовкопляс Л.А." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Шовкопляс Людмила Анатоліївна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">6-А клас</div>
-                        <img src="assets/img/t-baran.jpg" alt="Баран Л.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Баран Людмила В’ячеславівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-baran.jpg" alt="Баран Л.В." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Баран Людмила В’ячеславівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">6-Б клас</div>
-                        <img src="assets/img/t-symonenko.jpg" alt="Симоненко Н.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Симоненко Наталія Володимирівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-symonenko.jpg" alt="Симоненко Н.В." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Симоненко Наталія Володимирівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">7-А клас</div>
-                        <img src="assets/img/t-pomaz.jpg" alt="Помаз В.Г." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Помаз Вікторія Григорівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-pomaz.jpg" alt="Помаз В.Г." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Помаз Вікторія Григорівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">7-Б клас</div>
-                        <img src="assets/img/t-melnyk.jpg" alt="Мельник Л.Ю." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Мельник Лілія Юріївна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-melnyk.jpg" alt="Мельник Л.Ю." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Мельник Лілія Юріївна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">8-А клас</div>
-                        <img src="assets/img/t-lytvykh.jpg" alt="Литвих Т.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Литвих Тетяна Володимирівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-lytvykh.jpg" alt="Литвих Т.В." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Литвих Тетяна Володимирівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">8-Б клас</div>
-                        <img src="assets/img/t-hrytsai.jpg" alt="Грицай Т.А." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Грицай Тетяна Анатоліївна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-hrytsai.jpg" alt="Грицай Т.А." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Грицай Тетяна Анатоліївна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">9-А клас</div>
-                        <img src="assets/img/t-liabakh.jpg" alt="Лябах Н.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Лябах Наталія Василівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-liabakh.jpg" alt="Лябах Н.В." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Лябах Наталія Василівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
-                    <div class="teacher-card">
+                    <div class="card" style="border-top-color: var(--accent-orange);">
                         <div class="class-badge-large">9-Б клас</div>
-                        <img src="assets/img/t-bala.jpg" alt="Бала І.В." class="teacher-photo" onerror="this.src='assets/img/logo.png'">
-                        <div class="teacher-info">
-                            <div class="teacher-name">Бала Ірина Володимирівна</div>
-                            <div class="teacher-role">Класний керівник</div>
+                        <img src="assets/img/t-bala.jpg" alt="Бала І.В." class="card-photo"
+                            onerror="this.src='assets/img/logo.png'">
+                        <div class="card-content">
+                            <div class="card-title">Бала Ірина Володимирівна</div>
+                            <div class="card-subtitle">Класний керівник</div>
                         </div>
                     </div>
 
@@ -187,7 +126,9 @@
             </div>
         </section>
     </main>
-    <footer class="footer"><div class="container"><p>&copy; 2026 Українська класична гімназія</p></div></footer>
+
+    <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

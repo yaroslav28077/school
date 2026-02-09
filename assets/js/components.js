@@ -61,12 +61,12 @@ function injectHeader() {
                         <div class="mega-column">
                             <h4>Спільноти</h4>
                             <a href="history.html">📜 Історія</a>
-                            <a href="teachers.html">👨‍🏫 Учителі</a>
-                            <a href="humanities.html">• Гуманітарні</a>
-                            <a href="math-science.html">• Природничі</a>
-                            <a href="arts-health.html">• Мистецькі</a>
-                            <a href="primary-school.html">• Початкові</a>
-                            <a href="class-teachers.html">• Класні керівники</a>
+                            <a href="teachers.html">👨‍🏫 Професійні спільноти вчителів</a>
+                            <a href="humanities.html">📖 Суспільно-гуманітарні науки</a>
+                            <a href="math-science.html">🔬 Природничо-математичні науки</a>
+                            <a href="arts-health.html">🎨 Художньо-оздоровчий цикл</a>
+                            <a href="class-teachers.html">👥 Класні керівники</a>
+                            <a href="primary-school.html">🎒 Початкова школа</a>
                         </div>
                         <div class="mega-column">
                             <h4>Інформація</h4>
@@ -121,7 +121,7 @@ function injectHeader() {
                         <a href="student-government.html">🗳️ Самоврядування</a>
                         <a href="https://schoolprint.netlify.app" target="_blank" style="color: #0056b3; font-weight: 700;">🖨️ School Print</a>
                         <a href="circles.html">🎨 Гуртки</a>
-                        <a href="#">💡 Хакатон</a>
+                        <a href="hackathon.html">💡 Хакатон</a>
                     </div>
                 </li>
 

@@ -9,6 +9,198 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <style>
+        /* Year Selection Tabs */
+        .year-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .year-tab {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.05rem;
+            cursor: pointer;
+            border: 3px solid var(--primary-green);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .year-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .year-tab:hover::before {
+            left: 100%;
+        }
+
+        .year-tab:hover {
+            background: #e8f5e9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .year-tab.active {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Year Content Sections */
+        .year-content {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .year-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .samoanaliz-intro {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* Enhanced Document Links */
+        .links-container {
+            counter-reset: doc-counter;
+        }
+
+        .doc-link {
+            position: relative;
+            padding-left: 80px !important;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .doc-link::before {
+            counter-increment: doc-counter;
+            content: counter(doc-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 3px 10px rgba(46, 125, 50, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .doc-link:hover::before {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.5);
+        }
+
+        .doc-link:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .doc-link-col {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .doc-link-col span {
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        .doc-date {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            padding: 4px 12px;
+            background: #f5f5f5;
+            border-radius: 20px;
+            width: fit-content;
+        }
+
+        .doc-link:hover .doc-date {
+            background: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Document Type Badge */
+        .doc-type {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--accent-orange);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .year-tab {
+                padding: 14px 25px;
+                font-size: 0.95rem;
+            }
+
+            .doc-link {
+                padding-left: 70px !important;
+            }
+
+            .doc-link::before {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                left: 15px;
+            }
+
+            .doc-link-col span {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body class="inner-page">
@@ -18,39 +210,134 @@
         <section class="section">
             <div class="container">
                 <h1 class="page-title">Самоаналіз діяльності гімназії</h1>
-                <p class="samoanaliz-intro">Проведено самоаналіз за такими напрямами:</p>
+                <p class="samoanaliz-intro">Оберіть навчальний рік для перегляду результатів самоаналізу:</p>
 
-                <div class="links-container">
-                    <a href="https://drive.google.com/file/d/1hWsidC3x_Gd3K5ZLrlABJudv-2nWMG96/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">🏫</span>
-                        <div class="doc-link-col">
-                            <span>Освітнє середовище закладу освіти</span>
-                            <small class="doc-date">(з 16.01.23р. по 03.02.23р.)</small>
-                        </div>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1KSkZMOJS3BKXmWDmXOmdC6SoTXMw1J_p/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">📊</span>
-                        <div class="doc-link-col">
-                            <span>Система оцінювання здобувачів освіти</span>
-                            <small class="doc-date">(з 10.04.23р. по 10.05.23р.)</small>
-                        </div>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1VAu56y0fherxzRc3dBUH2kM9NdUjz5PN/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">👩‍🏫</span><span>Педагогічна діяльність працівників</span>
-                    </a>
-                    <a href="https://drive.google.com/file/d/1nsAyVZY6L8qo-ONN8GbgLe-4scawrevC/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">⚙️</span><span>Управлінські процеси закладу</span>
-                    </a>
+                <!-- Year Selection Tabs -->
+                <div class="year-tabs">
+                    <button class="year-tab active" data-year="2023-2024">2023-2024 навчальний рік</button>
+                    <button class="year-tab" data-year="2025-2026">2025-2026 навчальний рік</button>
+                </div>
+
+                <!-- 2023-2024 Academic Year -->
+                <div class="year-content active" id="year-2023-2024">
+                    <p class="samoanaliz-intro">Проведено самоаналіз за такими напрямами:</p>
+                    <div class="links-container">
+                        <a href="https://drive.google.com/file/d/1hWsidC3x_Gd3K5ZLrlABJudv-2nWMG96/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Освітнє середовище закладу освіти</span>
+                                <small class="doc-date">(з 16.01.23р. по 03.02.23р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1KSkZMOJS3BKXmWDmXOmdC6SoTXMw1J_p/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Система оцінювання здобувачів освіти</span>
+                                <small class="doc-date">(з 10.04.23р. по 10.05.23р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1VAu56y0fherxzRc3dBUH2kM9NdUjz5PN/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Педагогічна діяльність працівників</span>
+                            </div>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1nsAyVZY6L8qo-ONN8GbgLe-4scawrevC/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Управлінські процеси закладу</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2025-2026 Academic Year -->
+                <div class="year-content" id="year-2025-2026">
+                    <p class="samoanaliz-intro">Проведено самоаналіз за такими напрямами:</p>
+                    <div class="links-container">
+                        <a href="https://docs.google.com/presentation/d/1zQ-ClVLvpBIfqIbf1jjuqiLCSOPT16-c/edit?usp=sharing&ouid=106163904818877988760&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Управлінські процеси в закладі освіти</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/1fV-vEcwd11M1UQu6q5QZpacCWituRNf7/edit?usp=sharing&ouid=106163904818877988760&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Презентація: Управлінські процеси в закладі освіти</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/103AJW1VRpKQ4B5X1-z9wzyzDhjcjXEzA/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Оцінювання педагогічної діяльності педагогічних працівників</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/presentation/d/1-L9UP4chZY-mDfHktxGuDCU7nueHZ92u/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Презентація: Оцінювання педагогічної діяльності педагогічних працівників</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/1mj1OjIA3P8-Uyy9XtXj3V655OjMNEDcG/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Система оцінювання здобувачів освіти</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/presentation/d/1JehiV1sDHQemoXktnH7n3e2YNbipP9YP/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Презентація: Система оцінювання здобувачів освіти</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/1IgFasQaFHUYB-S4bSlsmeZSq3wWBSt-B/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <div class="doc-link-col">
+                                <span>Освітнє середовище закладу освіти</span>
+                                <small class="doc-date">(2025-2026 н.р.)</small>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        // Year Tab Switching
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearTabs = document.querySelectorAll('.year-tab');
+            const yearContents = document.querySelectorAll('.year-content');
+
+            yearTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const selectedYear = this.getAttribute('data-year');
+
+                    // Remove active class from all tabs and contents
+                    yearTabs.forEach(t => t.classList.remove('active'));
+                    yearContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Show corresponding content
+                    const targetContent = document.getElementById(`year-${selectedYear}`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

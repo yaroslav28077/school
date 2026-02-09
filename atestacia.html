@@ -9,6 +9,157 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <style>
+        /* Year Selection Tabs */
+        .year-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .year-tab {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.05rem;
+            cursor: pointer;
+            border: 3px solid var(--primary-green);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .year-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .year-tab:hover::before {
+            left: 100%;
+        }
+
+        .year-tab:hover {
+            background: #e8f5e9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .year-tab.active {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Year Content Sections */
+        .year-content {
+            display: none;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .year-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .atestacia-intro {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* Enhanced Document Links */
+        .links-container {
+            counter-reset: doc-counter;
+        }
+
+        .doc-link {
+            position: relative;
+            padding-left: 80px !important;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .doc-link::before {
+            counter-increment: doc-counter;
+            content: counter(doc-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 3px 10px rgba(46, 125, 50, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .doc-link:hover::before {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.5);
+        }
+
+        .doc-link:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .doc-link .doc-icon {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .year-tab {
+                padding: 14px 25px;
+                font-size: 0.95rem;
+            }
+
+            .doc-link {
+                padding-left: 70px !important;
+            }
+
+            .doc-link::before {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                left: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body class="inner-page">
@@ -33,33 +184,57 @@
                         забезпечення ефективності навчально-виховного процесу.</p>
                     <p class="atestacia-p"><strong>Основними принципами атестації</strong> є відкритість та
                         колегіальність, гуманне та доброзичливе ставлення до педагогічного працівника, повнота,
-                        об’єктивність та системність оцінювання його педагогічної діяльності.</p>
+                        об'єктивність та системність оцінювання його педагогічної діяльності.</p>
                     <p class="atestacia-note">Атестація педагогічних працівників навчальних та інших
-                        закладів є обов’язковою.</p>
+                        закладів є обов'язковою.</p>
                 </div>
 
-                <h3 class="atestacia-year-title">
-                    Атестація педагогічних працівників у 2024/2025 навчальному році</h3>
+                <!-- Year Selection Tabs -->
+                <div class="year-tabs">
+                    <button class="year-tab active" data-year="2024-2025">2024-2025 навчальний рік</button>
+                    <button class="year-tab" data-year="2025-2026">2025-2026 навчальний рік</button>
+                </div>
 
-                <div class="links-container">
-                    <a href="https://drive.google.com/file/d/1x8PVoN_NkGRptVhAMA5aGvhyLwl4j2bP/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">✅</span> Наказ про створення атестаційної комісії
-                    </a>
-                    <a href="https://drive.google.com/file/d/1-DgQ-QspHko-wVd4jK7SRulcOdzeY9sV/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">✅</span> Наказ про затвердження списка педагогічних працівників, які
-                        атестуються
-                    </a>
-                    <a href="https://drive.google.com/file/d/1IkU2cnbbe1T31k9D4buNc3DqVTeGvrhj/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">✅</span> План заходів з атестації педагогічних працівників
-                    </a>
-                    <a href="https://drive.google.com/file/d/1apT-lVNnzG96-gCVoY4P1T9kC4CXqyqE/view?usp=sharing"
-                        target="_blank" class="doc-link">
-                        <span class="doc-icon">✅</span> Графік роботи атестаційної комісії Української класичної
-                        гімназії ЛМР
-                    </a>
+                <!-- 2024-2025 Academic Year -->
+                <div class="year-content active" id="year-2024-2025">
+                    <div class="links-container">
+                        <a href="https://drive.google.com/file/d/1x8PVoN_NkGRptVhAMA5aGvhyLwl4j2bP/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> Наказ про створення атестаційної комісії
+                        </a>
+                        <a href="https://drive.google.com/file/d/1-DgQ-QspHko-wVd4jK7SRulcOdzeY9sV/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> Наказ про затвердження списка педагогічних працівників, які
+                            атестуються
+                        </a>
+                        <a href="https://drive.google.com/file/d/1IkU2cnbbe1T31k9D4buNc3DqVTeGvrhj/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> План заходів з атестації педагогічних працівників
+                        </a>
+                        <a href="https://drive.google.com/file/d/1apT-lVNnzG96-gCVoY4P1T9kC4CXqyqE/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> Графік роботи атестаційної комісії Української класичної
+                            гімназії ЛМР
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2025-2026 Academic Year -->
+                <div class="year-content" id="year-2025-2026">
+                    <div
+                        style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 4rem; margin-bottom: 20px;">📋</div>
+                        <h3
+                            style="color: var(--primary-green); font-size: 1.8rem; margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
+                            Матеріали готуються</h3>
+                        <p style="color: var(--text-light); font-size: 1.2rem; max-width: 500px; margin: 0 auto;">
+                            Документи з атестації на 2025-2026 навчальний рік будуть додані найближчим часом</p>
+                        <div style="margin-top: 30px;">
+                            <span
+                                style="display: inline-block; padding: 12px 30px; background: var(--accent-orange); color: white; border-radius: 25px; font-weight: 600; font-size: 0.95rem;">Скоро
+                                буде</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -67,6 +242,32 @@
 
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        // Year Tab Switching
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearTabs = document.querySelectorAll('.year-tab');
+            const yearContents = document.querySelectorAll('.year-content');
+
+            yearTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const selectedYear = this.getAttribute('data-year');
+
+                    // Remove active class from all tabs and contents
+                    yearTabs.forEach(t => t.classList.remove('active'));
+                    yearContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // Show corresponding content
+                    const targetContent = document.getElementById(`year-${selectedYear}`);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

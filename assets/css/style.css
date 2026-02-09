@@ -875,7 +875,8 @@ html {
     text-decoration: none;
     color: inherit;
     position: relative;
-    /* Added for absolute positioning of badges */
+    max-width: 380px;
+    margin: 0 auto;
 }
 
 .card:hover {
@@ -905,11 +906,10 @@ html {
 
 .card-photo {
     width: 100%;
-    height: 400px;
     /* Increased to show more body/hands */
+    height: 280px;
     object-fit: cover;
     object-position: top center;
-    /* Aligned to top so heads aren't cut off */
     background: #f0f0f0;
     transition: transform 0.3s;
 }
@@ -4185,10 +4185,79 @@ html {
     text-transform: uppercase;
 }
 
+
+
+/* =========================================
+   10. TEACHERS PAGE (New Styles)
+   ========================================= */
+
+.teachers-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
 .card-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 320px));
     gap: 30px;
-    flex-wrap: wrap;
     margin-bottom: 50px;
+    justify-content: center;
+}
+
+.teacher-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    border-bottom: 4px solid var(--primary-green);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    min-height: 280px;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+    border-bottom-color: var(--accent-orange);
+}
+
+.teacher-card .card-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.teacher-card .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.teacher-card .card-desc {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .teacher-card {
+        padding: 30px 20px;
+    }
 }

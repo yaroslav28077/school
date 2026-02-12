@@ -20,100 +20,117 @@
             <div class="container">
                 <h1 class="page-title">ПЕРЕЛІК НАВЧАЛЬНИХ ПРОГРАМ (І СТУПІНЬ)</h1>
 
-                <h3 class="page-title program-subtitle">1 клас</h3>
-                <div class="table-container">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th width="35%">Предмет</th>
-                                <th>Програма</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Українська мова. Навчання грамоти<br>
-                                    Математика<br>
-                                    Англійська мова<br>
-                                    «Я досліджую світ»<br>
-                                    Музичне мистецтво<br>
-                                    Образотворче мистецтво<br>
-                                    Фізична культура
-                                </td>
-                                <td>
-                                    Типова освітня програма для закладів загальної середньої освіти, розроблена під
-                                    керівництвом О. Я. Савченко (1-2 класи). Видавництво Київ. ТД «Освіта – Центр
-                                    плюс».<br>
-                                    <strong>Наказ Міністерства освіти і науки України від 12.08.2022 № 743-22</strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- TAB CONTROLS -->
+                <div class="grade-tabs">
+                    <button class="grade-tab-btn active" onclick="openGradeTab(event, 'grade1')">1 клас</button>
+                    <button class="grade-tab-btn" onclick="openGradeTab(event, 'grade2')">2 клас</button>
+                    <button class="grade-tab-btn" onclick="openGradeTab(event, 'grade34')">3-4 класи</button>
                 </div>
 
-                <h3 class="page-title program-subtitle-secondary">
-                    2 клас</h3>
-                <div class="table-container">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th width="35%">Предмет</th>
-                                <th>Програма</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Українська мова. Читання<br>
-                                    Математика<br>
-                                    Англійська мова<br>
-                                    «Я досліджую світ»<br>
-                                    Музичне мистецтво<br>
-                                    Образотворче мистецтво<br>
-                                    Фізична культура
-                                </td>
-                                <td>
-                                    Типова освітня програма для закладів загальної середньої освіти, розроблена під
-                                    керівництвом О. Я. Савченко (1-2 класи). Видавництво Київ. ТД «Освіта – Центр
-                                    плюс».<br>
-                                    <strong>Наказ Міністерства освіти і науки України від 12.08.2022 № 743-22</strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- CONTENT 1 -->
+                <div id="grade1" class="grade-tab-content active" style="display: block;">
+                    <h3 class="page-title program-subtitle">1 клас</h3>
+                    <div class="table-container">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th width="35%">Предмет</th>
+                                    <th>Програма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Українська мова. Навчання грамоти<br>
+                                        Математика<br>
+                                        Англійська мова<br>
+                                        «Я досліджую світ»<br>
+                                        Музичне мистецтво<br>
+                                        Образотворче мистецтво<br>
+                                        Фізична культура
+                                    </td>
+                                    <td>
+                                        Типова освітня програма для закладів загальної середньої освіти, розроблена під
+                                        керівництвом О. Я. Савченко (1-2 класи). Видавництво Київ. ТД «Освіта – Центр
+                                        плюс».<br>
+                                        <strong>Наказ Міністерства освіти і науки України від 12.08.2022 №
+                                            743-22</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <h3 class="page-title program-subtitle-secondary">
-                    3-4 класи</h3>
-                <div class="table-container">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th width="35%">Предмет</th>
-                                <th>Програма</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Українська мова<br>
-                                    Математика<br>
-                                    Англійська мова<br>
-                                    «Я досліджую світ»<br>
-                                    Музичне мистецтво<br>
-                                    Образотворче мистецтво<br>
-                                    Фізична культура<br>
-                                    Інформатика
-                                </td>
-                                <td>
-                                    Типова освітня програма для закладів загальної середньої освіти, розроблена під
-                                    керівництвом О. Я. Савченко (3-4 класи). Видавництво Київ. ТД «Освіта – Центр
-                                    плюс».<br>
-                                    <strong>Наказ Міністерства освіти і науки України від 12.08.2022 № 743-22</strong>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- CONTENT 2 -->
+                <div id="grade2" class="grade-tab-content" style="display: none;">
+                    <h3 class="page-title program-subtitle-secondary">2 клас</h3>
+                    <div class="table-container">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th width="35%">Предмет</th>
+                                    <th>Програма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Українська мова. Читання<br>
+                                        Математика<br>
+                                        Англійська мова<br>
+                                        «Я досліджую світ»<br>
+                                        Музичне мистецтво<br>
+                                        Образотворче мистецтво<br>
+                                        Фізична культура
+                                    </td>
+                                    <td>
+                                        Типова освітня програма для закладів загальної середньої освіти, розроблена під
+                                        керівництвом О. Я. Савченко (1-2 класи). Видавництво Київ. ТД «Освіта – Центр
+                                        плюс».<br>
+                                        <strong>Наказ Міністерства освіти і науки України від 12.08.2022 №
+                                            743-22</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- CONTENT 3-4 -->
+                <div id="grade34" class="grade-tab-content" style="display: none;">
+                    <h3 class="page-title program-subtitle-secondary">3-4 класи</h3>
+                    <div class="table-container">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th width="35%">Предмет</th>
+                                    <th>Програма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Українська мова<br>
+                                        Математика<br>
+                                        Англійська мова<br>
+                                        «Я досліджую світ»<br>
+                                        Музичне мистецтво<br>
+                                        Образотворче мистецтво<br>
+                                        Фізична культура<br>
+                                        Інформатика
+                                    </td>
+                                    <td>
+                                        Типова освітня програма для закладів загальної середньої освіти, розроблена під
+                                        керівництвом О. Я. Савченко (3-4 класи). Видавництво Київ. ТД «Освіта – Центр
+                                        плюс».<br>
+                                        <strong>Наказ Міністерства освіти і науки України від 12.08.2022 №
+                                            743-22</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
             </div>
@@ -122,6 +139,33 @@
 
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script>
+        function openGradeTab(evt, gradeName) {
+            // 1. Hide all tab contents
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("grade-tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 2. Deactivate all buttons
+            tablinks = document.getElementsByClassName("grade-tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // 3. Show current tab and activate button
+            document.getElementById(gradeName).style.display = "block";
+            // Add a small timeout to allow display:block to apply before adding opacity class for fade effect
+            setTimeout(() => {
+                document.getElementById(gradeName).classList.add("active");
+            }, 10);
+
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 
 </html>

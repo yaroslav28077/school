@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="inner-page">
@@ -77,11 +78,23 @@
                 </div>
 
                 <div class="info-section">
-                    <div class="section-header-small">
-                        <span>🤝</span> Батьківське самоврядування гімназії
+                    <div class="section-header-small" onclick="toggleParentsGovernance()"
+                        onmouseover="this.style.backgroundColor='#e8f5e9'"
+                        onmouseout="this.style.backgroundColor='var(--white)'"
+                        style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.3s ease;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span>🤝</span>
+                            <span>Батьківське самоврядування гімназії</span>
+                            <span
+                                style="font-size: 0.8rem; color: #666; font-weight: normal; margin-left: 10px;">(Натисніть,
+                                щоб переглянути)</span>
+                        </div>
+                        <i id="governance-icon" class="fas fa-chevron-down"
+                            style="transition: transform 0.3s ease;"></i>
                     </div>
 
-                    <div class="parents-table-container">
+                    <div id="parents-governance-content" class="parents-table-container"
+                        style="display: none; margin-top: 20px; animation: fadeIn 0.5s ease;">
                         <table class="parents-table">
                             <thead>
                                 <tr>
@@ -177,6 +190,30 @@
 
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <!-- Add Font Awesome for the icon if not already present, though it seems used in other pages. 
+         Checking if I need to add the link or if it's in head. 
+         The file view didn't show a FA link in head, so I'll add the script and the link just in case or rely on style.css importing/defining it?
+         Wait, programs-middle.html had <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">.
+         parents-info.html does NOT have it in the head (lines 4-12). I should add it to head as well. 
+         For this tool call I will just handle the body changes and script. I will do a separate edit for the head if needed, 
+         or just include the link here if I can edit the whole file... 
+         Actually, I'll just add the script function here. 
+    -->
+    <script>
+        function toggleParentsGovernance() {
+            var content = document.getElementById("parents-governance-content");
+            var icon = document.getElementById("governance-icon");
+
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                icon.style.transform = "rotate(180deg)";
+            } else {
+                content.style.display = "none";
+                icon.style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
 </body>
 
 </html>

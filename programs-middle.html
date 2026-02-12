@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="inner-page">
@@ -20,178 +21,984 @@
             <div class="container">
                 <h1 class="page-title">ПЕРЕЛІК НАВЧАЛЬНИХ ПРОГРАМ (ІІ СТУПІНЬ)</h1>
 
-                <h3 class="page-title program-subtitle">5-6 класи
-                    (НУШ)</h3>
-                <div class="table-container">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th width="30%">Предмет</th>
-                                <th>Програма</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Українська мова</td>
-                                <td>Модельна навчальна програма «Українська мова. 5-6 класи» (авт. Заболотний О.В.,
-                                    Заболотний В.В. та ін.). Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Українська література</td>
-                                <td>Модельна навчальна програма «Українська література. 5-6 класи» (авт. Архіпова В.П.,
-                                    Січкар С.І., Шило С.Б.). Наказ МОН від 12.07.2021р. № 795</td>
-                            </tr>
-                            <tr>
-                                <td>Зарубіжна література</td>
-                                <td>Модельна навчальна програма «Зарубіжна література. 5-6 класи» (авт. Ніколенко О.М.,
-                                    Ісаєва О.О., Клименко Ж.В. та ін.). Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Іноземна мова (англ. мова)</td>
-                                <td>Модельна навчальна програма «Іноземна мова. 5-9 класи» (авт. Зимомря І.М., Мойсюк
-                                    В.А., Тріфан М.С. та ін.). Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Іноземна мова (нім. мова)</td>
-                                <td>Модельна навчальна програма «Друга іноземна мова. 5-9 класи» (авт. Редько В.Г.,
-                                    Шаленко О.П., Сотникова С.І. та ін.)</td>
-                            </tr>
-                            <tr>
-                                <td>Математика</td>
-                                <td>Модельна навчальна програма «Математика. 5-6 класи» (авт. Мерзляк А.Г., Номіровський
-                                    Д.А. та ін.) Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Інтегрований курс «Пізнаємо природу»</td>
-                                <td>Модельна навчальна програма «Пізнаємо природу. 5-6 класи» (авт. Коршевнюк Т.В.)
-                                    Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Здоров’я, безпека та добробут</td>
-                                <td>Модельна навчальна програма «Здоров’я, безпека та добробут. 5-6 класи» (авт. Гущина
-                                    Н.І., Василашко І.П.) Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Вступ до історії України та громадянської освіти</td>
-                                <td>Модельна навчальна програма (авт. Бурлака О.В., Власова Н.С. та ін.) Наказ МОН від
-                                    12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Історія України. Всесвітня історія (6 клас)</td>
-                                <td>Модельна навчальна програма (авт. Піскарьова І.О., Бурлака О.В., Щупак І.Я.) Наказ
-                                    МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Інформатика</td>
-                                <td>Модельна навчальна програма «Інформатика. 5-6 класи» (авт. Ривкінд Й.Я., Лисенко
-                                    Т.І. та ін.) Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Технології</td>
-                                <td>Модельна навчальна програма «Технології. 5-6 класи» (авт. Ходзицька І.Ю., Горобець
-                                    О.В. та ін.) Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Музичне мистецтво / Образотворче мистецтво</td>
-                                <td>Модельна навчальна програма «Мистецтво. 5-6 класи» (авт. Масол Л.М., Просіна О.В.)
-                                    Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                            <tr>
-                                <td>Фізична культура</td>
-                                <td>Модельна навчальна програма «Фізична культура. 5-6 класи» (авт. Педан О.С.,
-                                    Коломоєць Г.А. та ін.) Наказ МОН від 12.07.2021р. №795</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- TAB CONTROLS -->
+                <div class="grade-tabs">
+                    <button class="grade-tab-btn active" onclick="openGradeTab(event, 'grade56')">5-6 класи
+                        (НУШ)</button>
+                    <button class="grade-tab-btn" onclick="openGradeTab(event, 'grade78')">7-8 класи (НУШ)</button>
+                    <button class="grade-tab-btn" onclick="openGradeTab(event, 'grade9')">9 клас</button>
                 </div>
 
-                <h3 class="page-title program-subtitle-secondary">
-                    7-9 класи</h3>
-                <div class="table-container">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th width="30%">Предмет</th>
-                                <th>Програма</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Українська мова</td>
-                                <td>Програма для загальноосвітніх навчальних закладів «Українська мова. 5-9 класи»
-                                    (наказ МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Українська література</td>
-                                <td>Програма для загальноосвітніх навчальних закладів «Українська література. 5-9 класи»
-                                    (наказ МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Алгебра</td>
-                                <td>Навчальна програма «Математика. 5-9 класи» (авт. Бурда М.І., Мальований Ю.І.) (наказ
-                                    МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Геометрія</td>
-                                <td>Навчальна програма «Математика. 5-9 класи» (авт. Бурда М.І., Мальований Ю.І.) (наказ
-                                    МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Зарубіжна література</td>
-                                <td>Навчальна програма «Зарубіжна література. 5-9 класи» (Ніколенко О.М.) (наказ МОН від
-                                    03.08.2022 № 698)</td>
-                            </tr>
-                            <tr>
-                                <td>Англійська мова</td>
-                                <td>Навчальні програми з іноземних мов для 5-9 класів (наказ МОН від 07.06.2017 № 804)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Біологія</td>
-                                <td>Навчальна програма «Біологія. 6-9 класи» (наказ МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Географія</td>
-                                <td>Навчальна програма «Географія. 6-9 класи» (наказ МОН від 03.08.2022 № 698)</td>
-                            </tr>
-                            <tr>
-                                <td>Хімія</td>
-                                <td>Програма для загальноосвітніх навчальних закладів «Хімія. 7-9 класи» (наказ МОН від
-                                    07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Фізика</td>
-                                <td>Навчальна програма «Фізика. 7-9 класи» (наказ МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Історія України / Всесвітня історія</td>
-                                <td>Навчальні програми 5-9 класи (наказ МОН від 03.08.2022 №698)</td>
-                            </tr>
-                            <tr>
-                                <td>Трудове навчання</td>
-                                <td>Навчальна програма «Трудове навчання. 5-9 класи» (наказ МОН від 07.06.2017 № 804)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Основи здоров’я</td>
-                                <td>Навчальна програма «Основи здоров’я. 5-9 класи» (наказ МОН від 03.06.2022 №698)</td>
-                            </tr>
-                            <tr>
-                                <td>Інформатика</td>
-                                <td>Навчальна програма «Інформатика. 5-9 класи» (наказ МОН від 07.06.2017 № 804)</td>
-                            </tr>
-                            <tr>
-                                <td>Фізична культура</td>
-                                <td>Навчальна програма «Фізична культура. 5-9 класи» (Тимчик М.В. та ін.) (наказ МОН від
-                                    03.08.2022 № 698)</td>
-                            </tr>
-                            <tr>
-                                <td>Мистецтво</td>
-                                <td>Навчальна програма «Мистецтво. 5-9 класи (авт. Л. Масол)» (наказ МОН від 07.06.2017
-                                    № 804)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- CONTENT 5-6 -->
+                <div id="grade56" class="grade-tab-content active" style="display: block;">
+                    <h3 class="page-title program-subtitle">5-6 класи (НУШ)</h3>
+                    <div class="programs-grid">
+                        <!-- 1. Українська мова -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українська мова</span>
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Українська мова. 5-6 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Заболотний О.В., Заболотний В.В., Лавринчук В.П., Плівачук
+                                    К.В., Попова Т.Д.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Українська література -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українська література</span>
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Українська література. 5-6
+                                    класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Архіпова В.П., Січкар С.І., Шило С.Б.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. № 795</div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Зарубіжна література -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Зарубіжна література</span>
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Зарубіжна література. 5-6 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ніколенко О.М., Ісаєва О.О., Клименко Ж.В.,
+                                    Моцевко-Бекерська
+                                    Л.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Іноземна мова (англ. мова) -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Іноземна мова (англ.)</span>
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Іноземна мова. 5-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Зимомря І.М., Мойсюк І.А., Тріфан М.С., Унгурян І.К.,
+                                    Яковчук
+                                    М.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Математика -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Математика</span>
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Математика. 5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Мерзляк А.Г., Номіровський Д.А., Пихтар М.П., Рубльов Б.В.,
+                                    Семенов В.В., Якір М.С.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Пізнаємо природу -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Пізнаємо природу</span>
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Пізнаємо природу. 5-6 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автор:</strong> Коршевнюк Т.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Здоров’я, безпека та добробут -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Здоров’я, безпека та добробут</span>
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Здоров’я, безпека та добробут.
+                                    5-6
+                                    класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Гущина Н.І., Василашко І.П.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Культура добросусідства -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Культура добросусідства</span>
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Культура добросусідства. 5-6
+                                    класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Араджоні М.А., Козорог О.Г., Лебідь Н.К., Потапова В.І.,
+                                    Унгурян І.К.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 9. СЕЕН -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>СЕЕН (Соціально-емоційне)</span>
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма «Соціально-емоційне та етичне навчання...»
+                                    (курс за вибором)</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Елькін О., Марущенко О. та ін.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. Вступ до історії України -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Вступ до історії (5-6 кл.)</span>
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Вступ до історії України та
+                                    громадянської освіти»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Бурлака О.В., Власова Н.С., Желіба О.В., Майорський В.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 11. Історія України (6 клас) -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Історія України (6 клас)</span>
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Історія України. Всесвітня
+                                    історія.
+                                    6 клас»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Піскарьова І.О., Бурлака О.В., Майорський В.В., Мелещенко
+                                    Т.В.,
+                                    Щупак І.Я.
+                                </div>
+                                <div class="program-order">МОН від 12.07. 2021 № 795</div>
+                            </div>
+                        </div>
+
+                        <!-- 12. Всесвітня історія (6 клас) -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Всесвітня історія (6 клас)</span>
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Історія України. Всесвітня
+                                    історія.
+                                    6 клас»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Піскарьова І.О., Бурлака О.В., Майорський В.В., Мелещенко
+                                    Т.В.,
+                                    Щупак І.Я.
+                                </div>
+                                <div class="program-order">МОН від 12.07. 2021 № 795</div>
+                            </div>
+                        </div>
+
+                        <!-- 13. Громадянська освіта -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Громадянська освіта</span>
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Громадянська освіта. 6-9 клас»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Васильків І. Д., Кравчук В. М., Танчин І. З.
+                                </div>
+                                <div class="program-order">Наказ МОН 19.12.2024 №1768</div>
+                            </div>
+                        </div>
+
+                        <!-- 14. Географія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Географія</span>
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Географія. 6-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Запотоцький С.П., Карпюк Г.І., Гладковський Р.В. та ін.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021 № 795 (у ред. № 324)</div>
+                            </div>
+                        </div>
+
+                        <!-- 15. Українознавство -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українознавство</span>
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">«Українознавство. Навчальна програма для 5-11 класів»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ціпко А., Бойко Т., Бойко С., Газізова О.
+                                </div>
+                                <div class="program-order">Лист МОН від 10.08.2020, №1/ІІ-5310</div>
+                            </div>
+                        </div>
+
+                        <!-- 16. Інформатика -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Інформатика</span>
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Інформатика.5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ривкінд Й. Я., Лисенко Т.І., Чернікова Л.А., Шакотько В.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 17. Технології -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Технології</span>
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Технології. 5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ходзицька І.Ю., Горобець О.В., Медведь О.Ю., Пасічна Т.С.,
+                                    Приходько Ю.М.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 18. Музичне мистецтво -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Музичне мистецтво</span>
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Мистецтво. 5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Масол Л.М., Просіна О.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 19. Образотворче мистецтво -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Образотворче мистецтво</span>
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Мистецтво. 5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Масол Л.М., Просіна О.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 20. Фізична культура -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Фізична культура</span>
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Фізична культура. 5-6 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Педан О.С., Коломоєць Г.А.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CONTENT 7-8 -->
+                <div id="grade78" class="grade-tab-content" style="display: none;">
+                    <h3 class="page-title program-subtitle-secondary">7-8 класи (НУШ)</h3>
+                    <div class="programs-grid">
+                        <!-- 1. Українська мова -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українська мова</span>
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна програма "Українська мова. 7-9 класи"</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Заболотний О. В., Заболотний В. В. та ін.
+                                </div>
+                                <div class="program-order">Наказ МОН від 24.07.2023 № 883</div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Українська література -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українська література</span>
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна програма "Українська література. 7-9 класи"</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Яценко Т., Пахаренко В. І. та інші
+                                </div>
+                                <div class="program-order">Наказ МОН від 24.07.2023 № 883</div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Іноземна мова (англійська) -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Іноземна мова (англ.)</span>
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Іноземна мова. 5-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Зимомря І.М., Мойсюк І.А., Тріфан М.С., Унгурян І.К.,
+                                    Яковчук
+                                    М.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Зарубіжна література -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Зарубіжна література</span>
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Зарубіжна література. 5–9 класи»
+                                    (у
+                                    редакції 2023 року)</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ніколенко О. М., Ісаєва О. О., Клименко Ж. В.,
+                                    Мацевко-Бекерська Л. В. та ін.
+                                </div>
+                                <div class="program-order">Наказ МОН від 10 жовтня 2023 року № 1226</div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Алгебра -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Алгебра</span>
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Алгебра. 7-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автор:</strong> Істер О.С.
+                                </div>
+                                <div class="program-order">Наказ МОН України від 24.07.2023 № 883</div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Геометрія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Геометрія</span>
+                                <i class="fas fa-shapes"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Геометрія. 7-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автор:</strong> Істер О.С.
+                                </div>
+                                <div class="program-order">Наказ МОН від 24.07.2023 № 883</div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Біологія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Біологія</span>
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Біологія. 7–9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Балан П. Г., Кулініч О. М., Юрченко Л. П.
+                                </div>
+                                <div class="program-order">Наказ МОН від 06.09.2023 № 1090</div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Географія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Географія</span>
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Географія. 6-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Запотоцький С.П., Карпюк Г.І., Гладковський Р.В. та ін
+                                </div>
+                                <div class="program-order">Наказ МОН від 12.07.2021 № 795 (у редакції наказу МОН від
+                                    11.04.2022 № 324)</div>
+                            </div>
+                        </div>
+
+                        <!-- 9. Фізика -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Фізика</span>
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Фізика. 7–9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Кремінський Б. Г., Гельфгат І. М., Божинова Ф. Я., Ненашев
+                                    І.
+                                    Ю., Кірюхіна О. О.
+                                </div>
+                                <div class="program-order">Наказ МОН від 16 серпня 2023 № 1001</div>
+                            </div>
+                        </div>
+
+                        <!-- 10. Хімія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Хімія</span>
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Хімія. 7–9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автор:</strong> Григорович О. В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 27.12.2023 № 1575</div>
+                            </div>
+                        </div>
+
+                        <!-- 11. Інтегрований курс «Здоров’я, безпека та добробут» -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Здоров’я, безпека та добробут</span>
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Здоров’я, безпека та добробут.
+                                    7-9
+                                    класи (інтегрований курс)»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Гущина Н. І., Василашко І. І.
+                                </div>
+                                <div class="program-order">Наказ МОН від 16 серпня 2023 року № 1001</div>
+                            </div>
+                        </div>
+
+                        <!-- 12. Історія України -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Історія України</span>
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Історія України. 7-9 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Бурлака О. В., Желіба О. В., Павловська-Кравчук В. А. та
+                                    ін.
+                                </div>
+                                <div class="program-order">Наказ МОН від 16.08.2023 № 1001</div>
+                            </div>
+                        </div>
+
+                        <!-- 13. Всесвітня історія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Всесвітня історія</span>
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Всесвітня історія. 7-9 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Щупак І. Я., Посунько А. С., Бакка Т. В., Бурлака О. В.,
+                                    Власова Н. С., Желіба О. В., Махонін О. О., Мелещенко Т. В., Павловська-Кравчук В.
+                                    А.,
+                                    Піскарьова І. О., Худобець О. А.
+                                </div>
+                                <div class="program-order">Наказ МОН від 16.08.2023 № 1001</div>
+                            </div>
+                        </div>
+
+                        <!-- 14. Громадянська освіта -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Громадянська освіта</span>
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Громадянська освіта. 6-9 клас»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Васильків І. Д., Кравчук В. М., Танчин І. З.
+                                </div>
+                                <div class="program-order">Наказ МОН 19.12.2024 №1768</div>
+                            </div>
+                        </div>
+
+                        <!-- 15. Українознавство -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українознавство</span>
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">«Українознавство. Навчальна програма для 5-11 класів»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ціпко А., Бойко Т., Бойко С., Газізова О.
+                                </div>
+                                <div class="program-order">Лист МОН України від 10.08.2020, №1/ІІ-5310</div>
+                            </div>
+                        </div>
+
+                        <!-- 16. Інформатика -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Інформатика</span>
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Інформатика. 7–9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Пасічник О. В., Козак Л. З., Ворожбит А. В.
+                                </div>
+                                <div class="program-order">Наказ МОН від 06.09.2023 № 1090</div>
+                            </div>
+                        </div>
+
+                        <!-- 17. Підприємництво і фінансова грамотність -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Підприємництво</span>
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Підприємництво і фінансова
+                                    грамотність.8-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Панченко С.Ю.
+                                </div>
+                                <div class="program-order">Наказ Міністерства освіти і науки України від 24.12.2024 №
+                                    1787
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 18. Музичне мистецтво -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Музичне мистецтво</span>
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Мистецтво. 5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Масол Л.М., Просіна О.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 19. Образотворче мистецтво -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Образотворче мистецтво</span>
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Мистецтво. 5-6 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Масол Л.М., Просіна О.В.
+                                </div>
+                                <div class="program-order">Наказ МОН від12.07.2021р. №795</div>
+                            </div>
+                        </div>
+
+                        <!-- 20. Технології -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Технології</span>
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Технології. 7–9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> ХодзицькаІ.Ю., Горобець О. В., Медвідь О. Ю., Пасічна Т.
+                                    С.,
+                                    Приходько Ю. М.
+                                </div>
+                                <div class="program-order">Наказ МОН від 16 серпня 2023 № 1001</div>
+                            </div>
+                        </div>
+
+                        <!-- 21. Інтегрований курс «Мистецтво» -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Мистецтво (інтегрований)</span>
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Мистецтво. 7-9 класи
+                                    (інтегрований
+                                    курс)»</div>
+                                <div class="program-meta">
+                                    <strong>Автор:</strong> Масол Л. М.
+                                </div>
+                                <div class="program-order">Наказ МОН від 06.09.2023 № 1090</div>
+                            </div>
+                        </div>
+
+                        <!-- 22. Фізична культура -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Фізична культура</span>
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Модельна навчальна програма «Фізична культура. 7-9 класи»
+                                </div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Баженков Є. В., Коломоєць Г. А., Боляк А. А., Дутчак М. В.,
+                                    Дніпров О. С., Бідний М. В., Ребрина А. А. та ін.
+                                </div>
+                                <div class="program-order">Наказ МОН від 24 липня 2023 року № 883</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CONTENT 9 -->
+                <div id="grade9" class="grade-tab-content" style="display: none;">
+                    <h3 class="page-title program-subtitle-secondary">9 клас</h3>
+                    <div class="programs-grid">
+                        <!-- 1. Українська мова -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українська мова</span>
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Програма для загальноосвітніх навчальних закладів «Українська
+                                    мова. 5-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Українська література -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українська література</span>
+                                <i class="fas fa-feather-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Програма для загальноосвітніх навчальних закладів «Українська
+                                    література. 5-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Іноземна мова (англійська) -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Іноземна мова (англ.)</span>
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальні програми з іноземних мов для загальноосвітніх
+                                    навчальних закладів і спеціалізованих шкіл із поглибленим вивченням іноземних мов
+                                    5-9
+                                    класи</div>
+                                <div class="program-order">Наказ МОН від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Зарубіжна література -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Зарубіжна література</span>
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Зарубіжна література. 5-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Колектив авторів, керівник колективу Ніколенко О. М.
+                                </div>
+                                <div class="program-order">Наказ МОН від 03.08.2022 № 698</div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Історія України -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Історія України</span>
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Історія України. 5-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 03.08.2022 № 698</div>
+                            </div>
+                        </div>
+
+                        <!-- 6. Всесвітня історія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Всесвітня історія</span>
+                                <i class="fas fa-globe-europe"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Всесвітня історія. 5-9 класи»</div>
+                                <div class="program-order">Наказ МОН від 03.08.2022 №698</div>
+                            </div>
+                        </div>
+
+                        <!-- 7. Основи правознавства -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Основи правознавства</span>
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для закладів загальної середньої освіти
+                                </div>
+                                <div class="program-order">Наказ МОН №698 від 03.08.2022</div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Українознавство -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Українознавство</span>
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">«Українознавство. Навчальна програма для 5-11 класів закладів
+                                    загальної середньої освіти України»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Ціпко А., Бойко Т., Бойко С., Газізова О.
+                                </div>
+                                <div class="program-order">Лист МОН України від 10.08.2020, №1/ІІ-5310</div>
+                            </div>
+                        </div>
+
+                        <!-- 9. Алгебра -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Алгебра</span>
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Математика. 5-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Бурда М.І., Мальований Ю.І.
+                                </div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 10. Геометрія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Геометрія</span>
+                                <i class="fas fa-shapes"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Математика. 5 – 9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Бурда М.І., Мальований Ю.І.
+                                </div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 11. Біологія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Біологія</span>
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Біологія. 6-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 12. Географія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Географія</span>
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Географія. 6-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 03.08.2022 № 698</div>
+                            </div>
+                        </div>
+
+                        <!-- 13. Фізика -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Фізика</span>
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Фізика. 7-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 14. Хімія -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Хімія</span>
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Програма для загальноосвітніх навчальних закладів «Хімія. 7-9
+                                    класи»</div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 15. Трудове навчання -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Трудове навчання</span>
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Трудове навчання. 5-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+
+                        <!-- 16. Інформатика -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Інформатика</span>
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Нав. програма для заг-освітніх навчальних закладів
+                                    «Інформатика»
+                                </div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804 (зі змінами)</div>
+                            </div>
+                        </div>
+
+                        <!-- 17. Основи здоров’я -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Основи здоров’я</span>
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Основи здоров’я. 5-9 класи»</div>
+                                <div class="program-order">Наказ МОН України від 03.06.2022 №698</div>
+                            </div>
+                        </div>
+
+                        <!-- 18. Фізична культура -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Фізична культура</span>
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Фізична культура. 5-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автори:</strong> Тимчик М. В., Алексейчук Є. Ю.та інші
+                                </div>
+                                <div class="program-order">Наказ МОН України від 03.08.2022 № 698</div>
+                            </div>
+                        </div>
+
+                        <!-- 19. Мистецтво -->
+                        <div class="program-card">
+                            <div class="program-header">
+                                <span>Мистецтво</span>
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="program-body">
+                                <div class="program-title">Навчальна програма для загальноосвітніх навчальних закладів
+                                    «Мистецтво. 5-9 класи»</div>
+                                <div class="program-meta">
+                                    <strong>Автор:</strong> Л. Масол
+                                </div>
+                                <div class="program-order">Наказ МОН України від 07.06.2017 № 804</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -199,6 +1006,33 @@
 
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script>
+        function openGradeTab(evt, gradeName) {
+            // 1. Hide all tab contents
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("grade-tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 2. Deactivate all buttons
+            tablinks = document.getElementsByClassName("grade-tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // 3. Show current tab and activate button
+            document.getElementById(gradeName).style.display = "block";
+            // Add a small timeout to allow display:block to apply before adding opacity class for fade effect
+            setTimeout(() => {
+                document.getElementById(gradeName).classList.add("active");
+            }, 10);
+
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 
 </html>

@@ -78,19 +78,13 @@
                 </div>
 
                 <div class="info-section">
-                    <div class="section-header-small" onclick="toggleParentsGovernance()"
-                        onmouseover="this.style.backgroundColor='#e8f5e9'"
-                        onmouseout="this.style.backgroundColor='var(--white)'"
-                        style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.3s ease;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span>🤝</span>
-                            <span>Батьківське самоврядування гімназії</span>
-                            <span
-                                style="font-size: 0.8rem; color: #666; font-weight: normal; margin-left: 10px;">(Натисніть,
-                                щоб переглянути)</span>
+                    <div class="section-header-small governance-toggle-btn" onclick="toggleParentsGovernance()">
+                        <div class="governance-title-wrapper">
+                            <span class="governance-icon">🤝</span>
+                            <span class="governance-title">Батьківське самоврядування гімназії</span>
+                            <span class="governance-hint">(Натисніть, щоб переглянути)</span>
                         </div>
-                        <i id="governance-icon" class="fas fa-chevron-down"
-                            style="transition: transform 0.3s ease;"></i>
+                        <i id="governance-icon" class="fas fa-chevron-down"></i>
                     </div>
 
                     <div id="parents-governance-content" class="parents-table-container"

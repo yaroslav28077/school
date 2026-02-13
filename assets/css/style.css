@@ -154,18 +154,22 @@ img {
 /* =========================================
    3. DESKTOP NAVIGATION (PC)
    ========================================= */
+
+/* Mobile-only elements hidden on desktop */
 .burger,
 .close-menu-btn,
 .overlay {
     display: none;
 }
 
+/* Nav list — horizontal on desktop */
 .nav-list {
     display: flex;
     gap: 5px;
     align-items: center;
 }
 
+/* Nav link base */
 .nav-link {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -178,6 +182,8 @@ img {
     align-items: center;
     gap: 5px;
     color: var(--text-dark);
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .nav-link:hover {
@@ -185,84 +191,171 @@ img {
     color: var(--primary-green);
 }
 
+/* Arrow indicator */
 .arrow {
     font-size: 10px;
     transition: transform 0.3s;
+    display: inline-block;
 }
 
-.nav-item:hover .arrow {
-    transform: rotate(180deg);
-}
-
-/* Dropdowns (ПК) */
+/* Nav item — dropdown container */
 .nav-item {
     position: relative;
 }
 
+/* ---- Dropdown Base (desktop) ---- */
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
     background: var(--white);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 10px 10px;
     padding: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-    transition: all 0.2s ease;
-    z-index: 999;
+    z-index: 1001;
     border-top: 4px solid var(--accent-orange);
     min-width: 240px;
+
+    /* Smooth show/hide via opacity + pointer-events (NO transform conflicts) */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    /* Delay on HIDE to prevent flicker when moving cursor */
+    transition-delay: 0.15s;
 }
 
-/* На ПК показуємо при наведенні */
+/* Bridge pseudo-element — eliminates "dead zone" between nav-link and dropdown */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+/* ---- Desktop hover show ---- */
 @media (min-width: 769px) {
-    .nav-item:hover .dropdown-menu {
+
+    .nav-item:hover>.nav-link .arrow,
+    .nav-item.open>.nav-link .arrow {
+        transform: rotate(180deg);
+    }
+
+    .nav-item:hover>.dropdown-menu,
+    .nav-item.open>.dropdown-menu {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        pointer-events: auto;
+        transition-delay: 0s;
+        /* Show immediately, delay only on hide */
     }
 }
 
-/* Mega Menu (ПК) */
+/* ---- Mega Menu (multi-column) ---- */
 .mega-menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    width: 700px;
+    gap: 25px;
+    /* Center relative to viewport, not nav-item */
     left: 50%;
-    transform: translateX(-50%) translateY(15px);
+    transform: translateX(-50%);
+    max-width: calc(100vw - 40px);
+    /* Never overflow viewport */
 }
 
-@media (min-width: 769px) {
-    .nav-item:hover .mega-menu {
-        transform: translateX(-50%) translateY(0);
-    }
+/* 3-column mega menu (Students) */
+.menu-3-col {
+    grid-template-columns: repeat(3, 1fr);
+    width: min(700px, calc(100vw - 40px));
+}
+
+/* 4-column mega menu (About Gymnasium) */
+.menu-4-col {
+    grid-template-columns: repeat(4, 1fr);
+    width: min(1000px, calc(100vw - 40px));
+}
+
+/* Simple dropdown (single column) */
+.simple-dropdown {
+    width: 260px;
+    left: 0;
+    transform: none;
+}
+
+/* ---- Dropdown content styles ---- */
+.mega-column {
+    min-width: 0;
+    /* prevent grid blowout */
 }
 
 .dropdown-menu h4 {
     color: var(--primary-green);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 6px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .dropdown-menu a {
     display: block;
-    padding: 8px 10px;
-    font-size: 0.9rem;
+    padding: 7px 10px;
+    font-size: 0.88rem;
     color: #444;
-    border-radius: 5px;
-    transition: 0.2s;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
 
-.dropdown-menu a:hover {
-    background: #f5f5f5;
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background: #e8f5e9;
     color: var(--primary-green);
-    transform: translateX(5px);
+    padding-left: 16px;
+    outline: none;
+}
+
+.dropdown-menu a:focus-visible {
+    outline: 2px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+/* Special link styles */
+.link-danger {
+    color: #d32f2f !important;
+    font-weight: 600;
+}
+
+.link-danger:hover {
+    color: #b71c1c !important;
+    background: #ffebee !important;
+}
+
+/* ---- Tablet responsiveness ---- */
+@media (max-width: 1200px) and (min-width: 769px) {
+    .menu-4-col {
+        grid-template-columns: repeat(2, 1fr);
+        width: min(600px, calc(100vw - 40px));
+    }
+
+    .menu-3-col {
+        width: min(500px, calc(100vw - 40px));
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+
+    .menu-3-col,
+    .menu-4-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mega-menu {
+        gap: 15px;
+        padding: 15px;
+    }
 }
 
 /* =========================================
@@ -661,20 +754,221 @@ img {
 /* =========================================
    6. FOOTER
    ========================================= */
-.footer {
-    background: #263238;
-    color: #cfd8dc;
-    padding: 40px 0;
-    text-align: center;
+/* =========================================
+   6. FOOTER (Redesigned)
+   ========================================= */
+.site-footer {
+    background: #1a1f24;
+    color: #e0e0e0;
+    padding-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: auto;
+    border-top: 5px solid var(--primary-green);
+}
+
+.footer-bottom {
+    display: block;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Column 1: Brand */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.brand-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 0.75rem;
+    margin: 5px 0 0;
+    color: #aaa;
+    line-height: 1.4;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #ccc;
+    font-style: italic;
+    border-left: 3px solid var(--accent-orange);
+    padding-left: 15px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
     margin-top: auto;
 }
 
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+    justify-content: center;
+}
+
+.social-btn.facebook {
+    background: #3b5998;
+    color: white;
+    box-shadow: 0 4px 10px rgba(59, 89, 152, 0.3);
+}
+
+.social-btn.email {
+    background: #4caf50;
+    color: white;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.fb-icon,
+.email-icon {
+    margin-right: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Column headings */
+.footer-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-orange);
+    border-radius: 2px;
+}
+
+/* Column 2: Contacts */
+.footer-contacts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contacts-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.footer-contacts-list .icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    min-width: 25px;
+    text-align: center;
+    color: var(--primary-green);
+    background: rgba(46, 125, 50, 0.1);
+    padding: 8px;
+    border-radius: 50%;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+.footer-contacts-list a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: 0.2s;
+    border-bottom: 1px dotted #666;
+}
+
+.footer-contacts-list a:hover {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
+}
+
+/* Column 3: Map */
+.footer-map-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.footer-map-wrapper:hover {
+    border-color: var(--accent-orange);
+}
+
+/* Copyright */
+.copyright-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
 /* =========================================
-   7. MOBILE ADAPTATION (Фінальний фікс)
+   7. MOBILE NAVIGATION
    ========================================= */
 @media (max-width: 768px) {
 
-    /* Кнопка бургер */
+    /* Burger button */
     .burger {
         display: block;
         cursor: pointer;
@@ -688,30 +982,32 @@ img {
         background: var(--text-dark);
         margin: 6px 0;
         transition: 0.3s;
+        border-radius: 2px;
     }
 
-    /* Меню (бічний слайдер) */
+    /* Sidebar menu */
     .nav {
         position: fixed;
         top: 0;
         left: -100%;
-        /* Сховано ліворуч */
         width: 85%;
+        max-width: 360px;
         height: 100vh;
+        height: 100dvh;
         background: var(--white);
         z-index: 1100;
         padding: 80px 20px 40px;
-        transition: 0.3s ease-in-out;
+        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         overflow-y: auto;
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        -webkit-overflow-scrolling: touch;
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
     }
 
     .nav.active {
         left: 0;
     }
 
-    /* Виїжджає */
-
+    /* Nav list — vertical */
     .nav-list {
         flex-direction: column;
         align-items: stretch;
@@ -720,16 +1016,16 @@ img {
 
     .nav-item {
         width: 100%;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #f0f0f0;
     }
 
     .nav-link {
-        font-size: 1.1rem;
-        padding: 15px 0;
+        font-size: 1rem;
+        padding: 16px 5px;
         justify-content: space-between;
     }
 
-    /* Затемнення */
+    /* Overlay backdrop */
     .overlay {
         position: fixed;
         top: 0;
@@ -740,7 +1036,7 @@ img {
         z-index: 1050;
         opacity: 0;
         visibility: hidden;
-        transition: 0.3s;
+        transition: opacity 0.35s ease, visibility 0.35s ease;
     }
 
     .overlay.active {
@@ -748,56 +1044,92 @@ img {
         visibility: visible;
     }
 
-    /* Кнопка закрити всередині меню */
+    /* Close button */
     .close-menu-btn {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 2rem;
+        top: 18px;
+        right: 18px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.5rem;
         cursor: pointer;
         color: #888;
+        border-radius: 50%;
+        transition: background 0.2s, color 0.2s;
     }
 
-    /* --- ВИПРАВЛЕННЯ ВИПАДАЮЧИХ СПИСКІВ --- */
+    .close-menu-btn:hover {
+        background: #f0f0f0;
+        color: var(--text-dark);
+    }
 
-    /* 1. Скидаємо стилі absolute, робимо список частиною потоку (static) */
+    /* ---- Mobile Dropdowns (accordion) ---- */
     .dropdown-menu,
     .mega-menu {
+        /* Reset desktop styles */
         position: static;
         width: 100%;
         transform: none;
-        opacity: 1;
-        visibility: visible;
         box-shadow: none;
         border: none;
-        background: #f9f9f9;
-        padding: 0;
-        display: none;
-        /* Сховано за замовчуванням */
-        padding-left: 15px;
+        border-radius: 0;
+        border-top: none;
+        background: #f8faf8;
+        pointer-events: auto;
+
+        /* Accordion animation via max-height */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 0 0 12px;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            padding 0.35s ease;
+        transition-delay: 0s;
     }
 
-    /* 2. Mega Menu перетворюємо в стовпчик */
+    /* Mega menu becomes single column */
     .mega-menu {
-        display: none;
-        /* Перебиваємо grid */
         grid-template-columns: 1fr;
     }
 
     .mega-column {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
-    /* 3. Показуємо, коли JS додає клас .open батьківському елементу */
-    .nav-item.open .dropdown-menu {
-        display: block;
-        animation: fadeIn 0.3s;
+    .dropdown-menu::before {
+        display: none;
+        /* Remove bridge element on mobile */
     }
 
-    /* Стрілочка крутиться */
-    .nav-item.open .arrow {
+    /* Open state — toggled by JS adding .open class */
+    .nav-item.open>.dropdown-menu {
+        max-height: 1500px;
+        /* Large enough for any content */
+        opacity: 1;
+        visibility: visible;
+        padding: 10px 0 10px 12px;
+    }
+
+    /* Arrow rotation */
+    .nav-item.open>.nav-link .arrow {
         transform: rotate(180deg);
+    }
+
+    /* Mobile dropdown links — slightly different padding */
+    .dropdown-menu a {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-menu h4 {
+        margin-top: 8px;
+        font-size: 0.8rem;
     }
 }
 
@@ -935,6 +1267,9 @@ html {
     position: relative;
     max-width: 380px;
     margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -3195,6 +3530,78 @@ html {
     border: 1px solid transparent;
 }
 
+/* Parent Governance Button */
+.governance-toggle-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+    border: 1px solid #c8e6c9 !important;
+    /* Override section-header-small */
+    border-radius: 12px;
+    padding: 20px 25px !important;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.governance-toggle-btn:hover {
+    background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.15);
+    transform: translateY(-2px);
+}
+
+.governance-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.governance-icon {
+    font-size: 1.5rem;
+    background: #e8f5e9;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--primary-green);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.governance-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-green);
+}
+
+.governance-hint {
+    font-size: 0.85rem;
+    color: #777;
+    background: #f5f5f5;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-weight: normal;
+}
+
+#governance-icon {
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    transition: transform 0.3s ease;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.governance-toggle-btn:hover #governance-icon {
+    background: #c8e6c9;
+}
+
 .doc-link-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -4750,5 +5157,542 @@ html {
 
     .doc-link-col span {
         font-size: 1rem;
+    }
+}
+
+/* =========================================
+   SCROLL-TO-TOP BUTTON
+   ========================================= */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: var(--dark-green);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.5);
+}
+
+/* =========================================
+   ACTIVE NAV STATE
+   ========================================= */
+.dropdown-menu a.nav-active {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--primary-green);
+    font-weight: 700;
+    border-left: 3px solid var(--primary-green);
+}
+
+.nav-item-active>.nav-link {
+    color: var(--primary-green);
+    background-color: #e8f5e9;
+}
+
+/* =========================================
+   HERO SLIDESHOW DOTS
+   ========================================= */
+.hero-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    gap: 10px;
+}
+
+.hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.hero-dot.active {
+    background: var(--white);
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.hero-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   HACKATHON PAGE (moved from inline)
+   ========================================= */
+.hackathon-hero {
+    background: linear-gradient(135deg, #2d5a3d 0%, #1a3d2a 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hackathon-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hackathon-hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hackathon-hero .subtitle {
+    font-size: 1.2em;
+    opacity: 0.95;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+.hackathon-intro {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.hackathon-intro h2 {
+    color: #2d5a3d;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.hackathon-intro p {
+    font-size: 1.05em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.day-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.day-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #2d5a3d;
+}
+
+.day-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.day-card-header {
+    background: linear-gradient(135deg, #2d5a3d 0%, #3d7a52 100%);
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.day-card-header .day-name {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.day-card-header .day-date {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.day-card-body {
+    padding: 25px;
+}
+
+.day-card-body h4 {
+    color: #2d5a3d;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 10px;
+}
+
+.day-card-body p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.day-card-body ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.day-card-body ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.day-card-body ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2d5a3d;
+    font-weight: bold;
+}
+
+.info-section {
+    background: linear-gradient(135deg, #f0f7f3 0%, #e8f5e9 100%);
+    padding: 40px;
+    border-radius: 12px;
+    margin: 40px 0;
+    border-left: 5px solid #2d5a3d;
+}
+
+.info-section h3 {
+    color: #2d5a3d;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.highlight-box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.highlight-box strong {
+    color: #2d5a3d;
+}
+
+@media (max-width: 768px) {
+    .hackathon-hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hackathon-hero .subtitle {
+        font-size: 1em;
+    }
+
+    .day-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hackathon-intro,
+    .info-section {
+        padding: 25px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* =========================================
+   UTILITY CLASSES (replaced inline styles)
+   ========================================= */
+.management-schedule-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.antibullying-info-section {
+    margin-top: 60px;
+}
+
+.antibullying-section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   MEMORY / MEMORIAL PAGE
+   ========================================= */
+.memory-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+}
+
+.memory-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #005bbb 50%, #ffd500 50%);
+}
+
+.memory-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 20px;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    75% {
+        opacity: 0.9;
+    }
+}
+
+.memory-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.memory-subtitle {
+    font-size: 1.3rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    color: #ffd500;
+}
+
+.memory-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.85;
+    font-size: 1.05rem;
+}
+
+/* Hero Cards — Desktop: 2-column grid, photo on top */
+.memory-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.memory-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #005bbb;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.memory-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.memory-card:nth-child(even) {
+    border-top-color: #ffd500;
+}
+
+.memory-card-photo {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.memory-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.memory-card:hover .memory-card-photo img {
+    transform: scale(1.03);
+}
+
+.memory-card-info {
+    flex: 1;
+    padding: 25px 30px 30px;
+}
+
+.memory-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.memory-rank {
+    font-size: 0.9rem;
+    color: #005bbb;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.memory-dates {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.memory-bio p {
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 0.92rem;
+}
+
+.memory-death {
+    color: #333;
+    font-weight: 600;
+    font-style: italic;
+    border-left: 3px solid #c0392b;
+    padding-left: 12px;
+    margin-top: 15px;
+}
+
+.memory-awards {
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border-radius: 8px;
+    border-left: 3px solid #f59e0b;
+}
+
+.memory-awards h3 {
+    font-size: 0.9rem;
+    color: #92400e;
+    margin-bottom: 6px;
+}
+
+.memory-awards p {
+    font-size: 0.85rem;
+    color: #78350f;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Memorial Quote */
+.memory-quote-section {
+    background: #1a1a2e;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.memory-quote {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    border: none;
+    position: relative;
+}
+
+.memory-quote::before {
+    content: '🕯️';
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-style: normal;
+}
+
+/* Responsive — Memory Page */
+@media (max-width: 1024px) {
+    .memory-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .memory-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .memory-card-photo {
+        height: 250px;
+    }
+
+    .memory-card-info {
+        padding: 20px;
+    }
+
+    .memory-name {
+        font-size: 1.15rem;
     }
 }

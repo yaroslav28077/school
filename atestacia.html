@@ -9,6 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
         rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Year Selection Tabs */
         .year-tabs {
@@ -159,6 +161,101 @@
                 left: 15px;
             }
         }
+
+
+        /* Regulation Card */
+        .regulation-card {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border-left: 6px solid var(--primary-green);
+            border-radius: 8px;
+            padding: 24px 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .regulation-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
+            background: #f1f8e9;
+        }
+
+        .regulation-icon-box {
+            width: 55px;
+            height: 55px;
+            background: rgba(46, 125, 50, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            flex-shrink: 0;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .regulation-card:hover .regulation-icon-box {
+            background: var(--primary-green);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .regulation-content-wrapper {
+            flex-grow: 1;
+        }
+
+        .regulation-title {
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+            display: block;
+            line-height: 1.4;
+        }
+
+        .regulation-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        .regulation-arrow {
+            color: var(--primary-green);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            margin-left: 15px;
+        }
+
+        .regulation-card:hover .regulation-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 768px) {
+            .regulation-card {
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .regulation-icon-box {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .regulation-arrow {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -189,14 +286,30 @@
                         закладів є обов'язковою.</p>
                 </div>
 
+                <!-- General Document - Regulation Card -->
+                <a href="https://drive.google.com/file/d/1eMsP1Fz90lkdkyL08_eJkCk914R3zRwZ/view?usp=sharing"
+                    target="_blank" class="regulation-card">
+                    <div class="regulation-icon-box">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <div class="regulation-content-wrapper">
+                        <span class="regulation-title">Критерії, правила і процедури оцінювання діяльності педагогічних
+                            працівників закладу</span>
+                        <span class="regulation-subtitle">Натисніть, щоб переглянути документ</span>
+                    </div>
+                    <div class="regulation-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
                 <!-- Year Selection Tabs -->
                 <div class="year-tabs">
-                    <button class="year-tab active" data-year="2024-2025">2024-2025 навчальний рік</button>
-                    <button class="year-tab" data-year="2025-2026">2025-2026 навчальний рік</button>
+                    <button class="year-tab" data-year="2024-2025">2024-2025 навчальний рік</button>
+                    <button class="year-tab active" data-year="2025-2026">2025-2026 навчальний рік</button>
                 </div>
 
                 <!-- 2024-2025 Academic Year -->
-                <div class="year-content active" id="year-2024-2025">
+                <div class="year-content" id="year-2024-2025">
                     <div class="links-container">
                         <a href="https://drive.google.com/file/d/1x8PVoN_NkGRptVhAMA5aGvhyLwl4j2bP/view?usp=sharing"
                             target="_blank" class="doc-link">
@@ -220,20 +333,21 @@
                 </div>
 
                 <!-- 2025-2026 Academic Year -->
-                <div class="year-content" id="year-2025-2026">
-                    <div
-                        style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        <div style="font-size: 4rem; margin-bottom: 20px;">📋</div>
-                        <h3
-                            style="color: var(--primary-green); font-size: 1.8rem; margin-bottom: 15px; font-family: 'Montserrat', sans-serif;">
-                            Матеріали готуються</h3>
-                        <p style="color: var(--text-light); font-size: 1.2rem; max-width: 500px; margin: 0 auto;">
-                            Документи з атестації на 2025-2026 навчальний рік будуть додані найближчим часом</p>
-                        <div style="margin-top: 30px;">
-                            <span
-                                style="display: inline-block; padding: 12px 30px; background: var(--accent-orange); color: white; border-radius: 25px; font-weight: 600; font-size: 0.95rem;">Скоро
-                                буде</span>
-                        </div>
+                <div class="year-content active" id="year-2025-2026">
+                    <div class="links-container">
+                        <a href="https://drive.google.com/file/d/1L1d8wK2faoj2ZMlCxXH2sUthStyBFqVN/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> Наказ про створення атестаційної комісії
+                        </a>
+                        <a href="https://drive.google.com/file/d/17F_cFQcsI-L5vBky9gdy17-C_4CmNnY3/view?usp=sharing"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> Наказ про затвердження списка педагогічних працівників, які
+                            атестуються
+                        </a>
+                        <a href="https://docs.google.com/document/d/1QCzvAB9yR-kRQpHz2K4XJTDU7nDqw7BG/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true"
+                            target="_blank" class="doc-link">
+                            <span class="doc-icon">✅</span> План заходів з атестації педагогічних працівників
+                        </a>
                     </div>
                 </div>
             </div>

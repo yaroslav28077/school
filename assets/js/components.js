@@ -51,7 +51,7 @@ function injectSEO() {
         'rights-students': 'Права та обов\'язки учнів — Українська класична гімназія.',
         'academic-integrity': 'Академічна доброчесність — Українська класична гімназія.',
         'prozorist': 'Прозорість та інформаційна відкритість — Українська класична гімназія.',
-        'samoanaliz': 'Самоаналіз діяльності — Українська класична гімназія.',
+        'samoanaliz': 'Самоаналіз освітньої діяльності — Українська класична гімназія.',
         'atestacia': 'Атестація педагогічних працівників — Українська класична гімназія.',
         'staff': 'Кадровий склад Української класичної гімназії.',
         'vacancies': 'Вакансії Української класичної гімназії.',
@@ -71,6 +71,8 @@ function injectSEO() {
         'books-primary': 'Електронні підручники початкової школи.',
         'books-middle': 'Електронні підручники середньої школи.',
         'psychology-support': 'Психологічна підтримка — Українська класична гімназія.',
+        'evaluation-criteria': 'Критерії оцінювання учнів середньої школи — Українська класична гімназія.',
+        'evaluation-criteria-primary': 'Критерії оцінювання учнів початкової школи — Українська класична гімназія.',
     };
 
     // Get page key from filename
@@ -204,8 +206,6 @@ function injectHeader() {
                             <a href="management.html">👔 Управління</a>
                             <a href="prozorist.html">🔍 Прозорість</a>
                             <a href="documents.html">📂 Документи</a>
-                            <a href="samoanaliz.html">📊 Самоаналіз</a>
-                            <a href="atestacia.html">🎖️ Атестація</a>
                         </div>
                         <div class="mega-column">
                             <h4>Історія</h4>
@@ -241,6 +241,15 @@ function injectHeader() {
                 </li>
 
                 <li class="nav-item dropdown" role="none">
+                    <span class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Освітнє середовище <span class="arrow">▾</span></span>
+                    <div class="dropdown-menu simple-dropdown" role="menu" aria-label="Educational environment menu">
+                        <a href="https://docs.google.com/document/d/1P5PefdP5r8WaavWdVfFvrZtMsfprZcgd/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true" target="_blank">📉 Внутрішня система якості</a>
+                        <a href="atestacia.html">🎖️ Атестація</a>
+                        <a href="samoanaliz.html">📊 Самоаналіз освітньої діяльності</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown" role="none">
                     <span class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Виховна робота <span class="arrow">▾</span></span>
                     <div class="dropdown-menu simple-dropdown" role="menu" aria-label="Educational work menu">
                         <a href="student-government.html">🗳️ Самоврядування</a>
@@ -258,12 +267,14 @@ function injectHeader() {
                             <a href="schedule-primary.html">🗓️ Розклад</a>
                             <a href="programs-primary.html">📚 Програми</a>
                             <a href="books-primary.html">📖 Підручники</a>
+                            <a href="evaluation-criteria-primary.html">📊 Критерії оцінювання</a>
                         </div>
                         <div class="mega-column">
                             <h4>Середня школа</h4>
                             <a href="schedule-middle.html">🗓️ Розклад</a>
                             <a href="programs-middle.html">📚 Програми</a>
                             <a href="books-middle.html">📖 Підручники</a>
+                            <a href="evaluation-criteria.html">📊 Критерії оцінювання</a>
                         </div>
                         <div class="mega-column">
                             <h4>Важливе</h4>

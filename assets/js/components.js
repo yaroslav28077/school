@@ -243,6 +243,7 @@ function injectHeader() {
                 <li class="nav-item dropdown" role="none">
                     <span class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Освітнє середовище <span class="arrow">▾</span></span>
                     <div class="dropdown-menu simple-dropdown" role="menu" aria-label="Educational environment menu">
+                        <a href="academic-integrity.html">🎓 Академічна доброчесність</a>
                         <a href="https://docs.google.com/document/d/1P5PefdP5r8WaavWdVfFvrZtMsfprZcgd/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true" target="_blank">📉 Внутрішня система якості</a>
                         <a href="atestacia.html">🎖️ Атестація</a>
                         <a href="samoanaliz.html">📊 Самоаналіз освітньої діяльності</a>
@@ -253,7 +254,7 @@ function injectHeader() {
                     <span class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Виховна робота <span class="arrow">▾</span></span>
                     <div class="dropdown-menu simple-dropdown" role="menu" aria-label="Educational work menu">
                         <a href="student-government.html">🗳️ Самоврядування</a>
-                        <a href="educational-work.html">🌻 Виховна робота</a>
+                        <a href="educational-work.html">🌻 Напрямки виховної роботи</a>
                         <a href="circles.html">🎨 Гуртки та секції</a>
                         <a href="hackathon.html">💡 Хакатон</a>
                     </div>
@@ -278,11 +279,9 @@ function injectHeader() {
                         </div>
                         <div class="mega-column">
                             <h4>Важливе</h4>
-                            <a href="rights-students.html">⚖️ Права</a>
-                            <a href="academic-integrity.html">🎓 Доброчесність</a>
+                            <a href="rights-students.html">⚖️ Декларація прав та обовʼязків</a>
                             <a href="electronic-diary.html">💻 Щоденник</a>
                             <a href="distance-learning.html">🌐 Дистанційне</a>
-                            <a href="educational-work.html">🌻 Виховна</a>
                         </div>
                     </div>
                 </li>

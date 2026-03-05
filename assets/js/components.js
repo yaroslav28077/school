@@ -244,7 +244,7 @@ function injectHeader() {
                     <span class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Освітнє середовище <span class="arrow">▾</span></span>
                     <div class="dropdown-menu simple-dropdown" role="menu" aria-label="Educational environment menu">
                         <a href="academic-integrity.html">🎓 Академічна доброчесність</a>
-                        <a href="https://docs.google.com/document/d/1P5PefdP5r8WaavWdVfFvrZtMsfprZcgd/edit?usp=sharing&ouid=113743931396349017568&rtpof=true&sd=true" target="_blank">📉 Внутрішня система якості</a>
+                        <a href="https://drive.google.com/file/d/14JuSN1j2vk4cy-jlR9fAGMiRzjNHjoCp/view?usp=sharing" target="_blank">📉 Внутрішня система якості</a>
                         <a href="atestacia.html">🎖️ Атестація</a>
                         <a href="samoanaliz.html">📊 Самоаналіз освітньої діяльності</a>
                     </div>
@@ -442,7 +442,7 @@ function initializeNavigation() {
 
         // -- Mobile: accordion click --
         link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1200) {
                 e.preventDefault();
                 e.stopPropagation();
                 const isOpen = item.classList.contains('open');
@@ -472,7 +472,7 @@ function initializeNavigation() {
 
         // -- Desktop: hover with delay to prevent flicker --
         // (CSS handles the visual, JS handles aria)
-        if (window.matchMedia('(min-width: 769px)').matches) {
+        if (window.matchMedia('(min-width: 1201px)').matches) {
             item.addEventListener('mouseenter', () => {
                 link.setAttribute('aria-expanded', 'true');
             });
@@ -485,7 +485,7 @@ function initializeNavigation() {
     // Close mobile menu on link click (navigate away)
     nav.querySelectorAll('.dropdown-menu a').forEach(a => {
         a.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 1200) {
                 closeMenu();
             }
         });

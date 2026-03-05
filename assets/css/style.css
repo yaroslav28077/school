@@ -236,7 +236,7 @@ img {
 }
 
 /* ---- Desktop hover show ---- */
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
 
     .nav-item:hover>.nav-link .arrow,
     .nav-item.open>.nav-link .arrow {
@@ -334,29 +334,7 @@ img {
 }
 
 /* ---- Tablet responsiveness ---- */
-@media (max-width: 1200px) and (min-width: 769px) {
-    .menu-4-col {
-        grid-template-columns: repeat(2, 1fr);
-        width: min(600px, calc(100vw - 40px));
-    }
-
-    .menu-3-col {
-        width: min(500px, calc(100vw - 40px));
-    }
-}
-
-@media (max-width: 992px) and (min-width: 769px) {
-
-    .menu-3-col,
-    .menu-4-col {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .mega-menu {
-        gap: 15px;
-        padding: 15px;
-    }
-}
+/* Handled by mobile navigation under 1200px */
 
 /* =========================================
    4. HERO & SECTIONS
@@ -966,7 +944,7 @@ img {
 /* =========================================
    7. MOBILE NAVIGATION
    ========================================= */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 
     /* Burger button */
     .burger {

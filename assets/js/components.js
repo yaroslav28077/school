@@ -36,7 +36,9 @@ function injectSEO() {
         'schedule-primary': 'Розклад уроків початкової школи Української класичної гімназії.',
         'schedule-middle': 'Розклад уроків середньої школи Української класичної гімназії.',
         'admission': 'Вступ до Української класичної гімназії — правила прийому, документи, територія обслуговування.',
+        'appeal': 'Звернення до адміністрації Української класичної гімназії — зворотній зв\'язок.',
         'antibullying': 'Антибулінгова кампанія гімназії — профілактика, план заходів, допомога.',
+        'protydiya-nasylstvu': 'Протидія насильству — створення безпечного освітнього середовища, запобігання дискримінації.',
         'hackathon': 'Освітній Хакатон 2025 — фестиваль партнерства з тематичними днями для учнів, батьків та вчителів.',
         'director': 'Сторінка директора Української класичної гімназії — звернення до батьків та учнів.',
         'history': 'Історія Української класичної гімназії м. Лубни.',
@@ -73,6 +75,8 @@ function injectSEO() {
         'psychology-support': 'Психологічна підтримка — Українська класична гімназія.',
         'evaluation-criteria': 'Критерії оцінювання учнів середньої школи — Українська класична гімназія.',
         'evaluation-criteria-primary': 'Критерії оцінювання учнів початкової школи — Українська класична гімназія.',
+        'scientific-works': 'Наукові роботи учнів Української класичної гімназії м. Лубни.',
+        'inclusive-education': 'Інклюзивна освіта — Українська класична гімназія.',
     };
 
     // Get page key from filename
@@ -225,6 +229,7 @@ function injectHeader() {
                             <a href="psychologist.html">🧠 Психолог</a>
                             <a href="psychology-support.html">💙 Підтримка</a>
                             <a href="antibullying.html" class="link-danger">🛑 Антибулінг</a>
+                            <a href="protydiya-nasylstvu.html">🛡️ Протидія насильству</a>
                             <h4>Центри</h4>
                             <a href="library.html">📚 Бібліотека</a>
                             <a href="medical-service.html">🏥 Медична служба</a>
@@ -247,6 +252,8 @@ function injectHeader() {
                         <a href="https://drive.google.com/file/d/14JuSN1j2vk4cy-jlR9fAGMiRzjNHjoCp/view?usp=sharing" target="_blank">📉 Внутрішня система якості</a>
                         <a href="atestacia.html">🎖️ Атестація</a>
                         <a href="samoanaliz.html">📊 Самоаналіз освітньої діяльності</a>
+                        <a href="scientific-works.html">🔬 Наукові роботи</a>
+                        <a href="inclusive-education.html">🤝 Інклюзивна освіта</a>
                     </div>
                 </li>
 
@@ -290,14 +297,13 @@ function injectHeader() {
                     <span class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false" tabindex="0">Батькам <span class="arrow">▾</span></span>
                     <div class="dropdown-menu simple-dropdown" role="menu" aria-label="Parents menu">
                         <a href="parents-rights.html">⚖️ Права батьків</a>
-                        <a href="territory.html">🗺️ Територія</a>
-                        <a href="admission.html">📝 Вступ</a>
+                        <a href="territory.html">🗺️ Територія обслуговування</a>
+                        <a href="admission.html">📝 Умови вступу до 1 класу</a>
                         <a href="parents-info.html">ℹ️ Інформація</a>
                     </div>
+                <li class="nav-item">
+                    <a href="appeal.html" class="nav-link appeal-nav-btn">💬 Звернення</a>
                 </li>
-
-
-
 
             </ul>
         </nav>

@@ -215,6 +215,7 @@ function injectHeader() {
                             <h4>Історія</h4>
                             <a href="history.html">📜 Історія</a>
                             <a href="memory.html">🕯️ Сторінка пам'яті</a>
+                            <a href="https://museum.lubnyrada.gov.ua/memorial/" target="_blank">🏛️ Віртуальний меморіал</a>
                             <h4>Спільноти</h4>
                             <a href="teachers.html">👨‍🏫 Професійні спільноти вчителів</a>
                             <a href="humanities.html">📖 Суспільно-гуманітарні науки</a>

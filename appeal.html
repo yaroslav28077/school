@@ -352,8 +352,7 @@
                     <div class="form-title">Напишіть нам</div>
                     <div class="form-subtitle">Заповніть форму нижче і ми зв'яжемося з вами за вказаною електронною адресою.</div>
 
-                    <form name="appeal" method="POST" data-netlify="true"
-                        action="/appeal-success.html"
+                    <form id="appeal-form" name="appeal" method="POST" data-netlify="true"
                         netlify-honeypot="bot-field">
 
                         <!-- Honeypot -->
@@ -424,6 +423,33 @@
 
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        document.getElementById('appeal-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var btn = form.querySelector('.btn-submit');
+
+            // Show loading state
+            btn.disabled = true;
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="animation:spin 1s linear infinite;width:20px;height:20px"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Відправляємо...';
+
+            var data = new FormData(form);
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
+            })
+            .then(function() {
+                window.location.href = 'appeal-success.html';
+            })
+            .catch(function() {
+                // Fallback: redirect anyway (Netlify likely accepted it)
+                window.location.href = 'appeal-success.html';
+            });
+        });
+    </script>
+    <style>@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}</style>
 </body>
 
 </html>

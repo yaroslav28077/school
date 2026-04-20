@@ -186,6 +186,202 @@
             color: white;
             transform: translateX(6px);
         }
+
+        /* ===== АЛГОРИТМ ===== */
+        .algo-section {
+            margin-top: 40px;
+            background: #f7f9ff;
+            border-radius: 20px;
+            padding: 36px 40px 32px;
+            border: 1px solid #dce6ff;
+            box-shadow: 0 6px 30px rgba(26,58,143,0.07);
+        }
+
+        .algo-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 36px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #dce6ff;
+        }
+
+        .algo-header-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #1a3a8f, #2d5be3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(26,58,143,0.25);
+        }
+
+        .algo-header-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #e67e00;
+            margin-bottom: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .algo-header-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #1a3a8f;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .algo-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 28px;
+            background: white;
+            border-radius: 14px;
+            padding: 22px 24px;
+            box-shadow: 0 2px 12px rgba(26,58,143,0.07);
+            border-left: 4px solid transparent;
+            transition: box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .algo-step:hover {
+            box-shadow: 0 6px 24px rgba(26,58,143,0.13);
+            border-left-color: #2d5be3;
+        }
+
+        .algo-step-num {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            margin-top: 2px;
+        }
+
+        .algo-step-body {
+            flex: 1;
+        }
+
+        .algo-step-label {
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 2px;
+        }
+
+        .algo-step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+            letter-spacing: 0.3px;
+        }
+
+        .algo-step-text {
+            margin: 8px 0;
+            color: #333;
+            line-height: 1.65;
+            font-size: 0.95rem;
+        }
+
+        .algo-list {
+            margin: 8px 0 8px 20px;
+            padding: 0;
+            color: #333;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .algo-list li {
+            margin-bottom: 6px;
+        }
+
+        .algo-alert {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: #fff8e6;
+            border: 1px solid #ffe0a0;
+            border-left: 4px solid #e67e00;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            font-size: 0.93rem;
+            line-height: 1.65;
+            color: #3d2800;
+        }
+
+        .algo-alert-inline {
+            margin: 16px 0 0 0;
+        }
+
+        .algo-alert-icon {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            background: #e67e00;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1rem;
+            line-height: 1;
+            margin-top: 1px;
+        }
+
+        .algo-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #dce6ff;
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        .algo-source-link {
+            color: #2d5be3;
+            font-style: normal;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .algo-source-link:hover {
+            color: #1a3a8f;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .algo-section { padding: 20px 16px; }
+            .algo-header { flex-direction: column; gap: 12px; }
+            .algo-step { flex-direction: column; gap: 12px; }
+            .algo-header-title { font-size: 1.2rem; }
+            .algo-footer { flex-direction: column; align-items: flex-start; }
+        }
     </style>
 </head>
 
@@ -229,6 +425,151 @@
                         <li>надання достовірної інформації про результати власної навчальної (наукової, творчої)
                             діяльності, використані методики досліджень і джерела інформації.</li>
                     </ul>
+                </div>
+
+                <!-- Алгоритм дій керівника -->
+                <div class="algo-section">
+                    <div class="algo-header">
+                        <div class="algo-header-icon">⚖️</div>
+                        <div>
+                            <div class="algo-header-label">при отриманні повідомлення про порушення</div>
+                            <h2 class="algo-header-title">Алгоритм дій керівника закладу освіти</h2>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 1 -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#1a3a8f,#2d5be3);">1</div>
+                        <div class="algo-step-body">
+                            <div class="algo-step-label">КРОК</div>
+                            <h3 class="algo-step-title" style="color:#1a3a8f;">Реєстрація повідомлення</h3>
+                            <p class="algo-step-text"><strong>Керівник</strong> забезпечує <strong>ОБОВ'ЯЗКОВЕ ФІКСУВАННЯ</strong> усіх отриманих письмових повідомлень (заяв, скарг) про порушення академічної доброчесності.</p>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 2 -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#e67e00,#f5a623);">2</div>
+                        <div class="algo-step-body">
+                            <div class="algo-step-label">КРОК</div>
+                            <h3 class="algo-step-title" style="color:#e67e00;">Попередній розгляд</h3>
+                            <p class="algo-step-text"><strong>Керівник:</strong></p>
+                            <ul class="algo-list">
+                                <li><strong>перевіряє</strong>, чи належить питання до порушення академічної доброчесності;</li>
+                                <li><strong>визначає</strong>, хто є суб'єктом порушення (здобувач освіти, педагогічний працівник);</li>
+                                <li><strong>перевіряє</strong> наявність первинних доказів.</li>
+                            </ul>
+                            <p class="algo-step-text"><strong>Протягом 3 робочих днів</strong> приймає рішення:</p>
+                            <ul class="algo-list">
+                                <li>про надсилання відповідного повідомлення до <strong>уповноваженого органу</strong> (комісії з питань академічної доброчесності або педагогічної ради) чи <strong>уповноваженої особи</strong>;</li>
+                                <li>про утворення уповноваженого органу (<strong>призначення уповноваженої особи</strong>) та надсилання до нього відповідного повідомлення;</li>
+                                <li>про притягнення особи до академічної та/або <strong>дисциплінарної відповідальності</strong>, у випадку, визначеному ч. 7 ст. 37 Закону*, з підстав та в порядку, визначених внутрішніми актами закладу.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ВАЖЛИВО (картка 2) -->
+                    <div class="algo-alert">
+                        <div class="algo-alert-icon">!</div>
+                        <div>Повідомлення підлягає розгляду, якщо наведена у ньому інформація містить <strong>фактичні дані</strong>, що вказують на можливий факт порушення академічної доброчесності, <strong>які можуть бути перевірені</strong>. В іншому випадку уповноважений орган (уповноважена особа) має право залишити повідомлення без розгляду (ч. 2 ст. 37 Закону*).</div>
+                    </div>
+
+                    <!-- КРОК 3 -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#1a3a8f,#2d5be3);">3</div>
+                        <div class="algo-step-body">
+                            <div class="algo-step-label">КРОК</div>
+                            <h3 class="algo-step-title" style="color:#1a3a8f;">Розгляд повідомлення</h3>
+                            <p class="algo-step-text"><strong>Уповноважений орган (уповноважена особа). Протягом 10 робочих днів</strong> з дня надходження повідомлення:</p>
+                            <ul class="algo-list">
+                                <li><strong>ухвалює рішення про початок розгляду повідомлення</strong> за встановленою процедурою або про залишення повідомлення без розгляду і повідомляє про це заявника;</li>
+                                <li>надсилає/надає особі, стосовно якої надійшло повідомлення, його копію та <strong>не пізніш як за 3 робочі дні</strong> до дати розгляду <strong>інформує її про дату, час і місце розгляду повідомлення</strong>.</li>
+                            </ul>
+                            <p class="algo-step-text">Розгляд повідомлення здійснюється <strong>в порядку, затвердженому колегіальним органом управління закладу освіти</strong>, з дотриманням принципів і основних правил реагування на порушення академічної доброчесності, визначених Законом*.</p>
+                            <div class="algo-alert algo-alert-inline">
+                                <div class="algo-alert-icon">!</div>
+                                <div>У разі <strong>визнання факту порушення</strong> академічної доброчесності <strong>особою</strong>, стосовно якої розглядається повідомлення, <strong>перевірка і дослідження доказів не проводяться</strong> (ч. 7 ст. 37 Закону*).</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 4 -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#e67e00,#f5a623);">4</div>
+                        <div class="algo-step-body">
+                            <div class="algo-step-label">КРОК</div>
+                            <h3 class="algo-step-title" style="color:#e67e00;">Забезпечення прав сторін</h3>
+                            <p class="algo-step-text">Особі, стосовно якої розглядається повідомлення, <strong>гарантується право (особисто або через свого представника):</strong></p>
+                            <ul class="algo-list">
+                                <li>бути поінформованою про початок процедури, дату, час і місце розгляду повідомлення;</li>
+                                <li>бути присутньою під час розгляду;</li>
+                                <li>ознайомлюватися з усіма матеріалами та надавати до них зауваження;</li>
+                                <li>надавати усні та письмові заперечення, пояснення або відмовитися від їх надання;</li>
+                                <li>брати участь у дослідженні доказів порушення академічної доброчесності.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 5 -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#1a3a8f,#2d5be3);">5</div>
+                        <div class="algo-step-body">
+                            <div class="algo-step-label">КРОК</div>
+                            <h3 class="algo-step-title" style="color:#1a3a8f;">Прийняття рішення</h3>
+                            <p class="algo-step-text">Якщо порушник — <strong>педагог</strong>, <strong>рішення</strong> про встановлення факту порушення та вид відповідальності <strong>приймає педагогічна рада</strong>.<br>Якщо порушник — <strong>здобувач освіти</strong>, заходи реагування визначаються <strong>відповідно до внутрішнього положення закладу</strong> та Закону*.</p>
+                            <div class="algo-alert algo-alert-inline">
+                                <div class="algo-alert-icon">!</div>
+                                <div>Рішення уповноваженого органу має бути:
+                                    <ul class="algo-list" style="margin-top:8px;">
+                                        <li><strong>обґрунтованим</strong> (ухваленим на підставі доказів, повно і всебічно досліджених у процесі розгляду, або на підставі визнання особою факту порушення академічної доброчесності);</li>
+                                        <li><strong>містити інформацію про</strong> конкретний <strong>вид порушення</strong> академічної доброчесності <strong>і санкцію</strong> за таке порушення (ч. 8 ст. 37 Закону*).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 5 → Керівник -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#e67e00,#f5a623);">5→</div>
+                        <div class="algo-step-body">
+                            <p class="algo-step-text"><strong>Керівник:</strong></p>
+                            <ul class="algo-list">
+                                <li><strong>видає наказ</strong> на підставі рішення уповноваженого органу (уповноваженої особи);</li>
+                                <li><strong>застосовує академічну відповідальність</strong> відповідно до законодавства та внутрішніх документів закладу;</li>
+                                <li><strong>забезпечує зберігання</strong> матеріалів розгляду;</li>
+                                <li><strong>оприлюднює рішення</strong> на сайті закладу (за відсутності — на сайті засновника закладу).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- КРОК 6 -->
+                    <div class="algo-step">
+                        <div class="algo-step-num" style="background: linear-gradient(135deg,#1a3a8f,#2d5be3);">6</div>
+                        <div class="algo-step-body">
+                            <div class="algo-step-label">КРОК</div>
+                            <h3 class="algo-step-title" style="color:#1a3a8f;">Повідомлення сторін</h3>
+                            <p class="algo-step-text"><strong>Керівник</strong> забезпечує:</p>
+                            <ul class="algo-list">
+                                <li><strong>повідомлення</strong> особи, щодо якої розглядалося повідомлення про порушення академічної доброчесності, та особи, яка подала повідомлення, <strong>про ухвалене рішення</strong>;</li>
+                                <li><strong>доведення сторонам</strong> їхнього <strong>права на оскарження рішення</strong> у порядку, визначеному законодавством чи закладом освіти.</li>
+                            </ul>
+                            <div class="algo-alert algo-alert-inline">
+                                <div class="algo-alert-icon">!</div>
+                                <div>Рішення уповноваженого органу, ухвалене у встановленому порядку, <strong>набирає чинності з дня його оприлюднення</strong>, а в разі його оскарження — з дня оприлюднення рішення суб'єктом розгляду скарги (ч. 10 ст. 37 Закону*).</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="algo-footer">
+                        <span>* ЗУ «Про академічну доброчесність» від 18.12.2025 № 4742-IX · Введення в дію — 31.07.2026</span>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                            <a href="assets/img/algorithm-director-1.png" target="_blank" class="algo-source-link">Інфографіка 1 →</a>
+                            <a href="assets/img/algorithm-director-2.png" target="_blank" class="algo-source-link">Інфографіка 2 →</a>
+                            <a href="assets/img/algorithm-director-3.png" target="_blank" class="algo-source-link">Інфографіка 3 →</a>
+                            <a href="assets/img/algorithm-director-4.png" target="_blank" class="algo-source-link">Інфографіка 4 →</a>
+                        </div>
+                    </div>
                 </div>
 
                 <h2 class="page-title materials-title">Матеріали та документи</h2>

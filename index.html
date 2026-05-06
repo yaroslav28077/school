@@ -43,6 +43,35 @@
             </div>
         </section>
 
+        <!-- Video Section -->
+        <section class="section video-section">
+            <div class="container">
+                <h2 class="page-title">Наша гімназія</h2>
+                <div class="video-wrapper">
+                    <video
+                        id="school-video"
+                        class="school-video"
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        preload="metadata">
+                        <source src="assets/img/video_2026-05-06_21-08-38.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відтворення відео.
+                    </video>
+                    <div class="video-play-overlay" id="video-play-overlay">
+                        <button class="video-play-btn" id="video-play-btn" aria-label="Відтворити відео про гімназію">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                        <p class="video-play-label">Дивитися відео про гімназію</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <h2 class="page-title">Новини гімназії</h2>
@@ -93,6 +122,40 @@
 
     <script src="assets/js/components.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        (function () {
+            var video   = document.getElementById('school-video');
+            var overlay = document.getElementById('video-play-overlay');
+            var btn     = document.getElementById('video-play-btn');
+            if (!video || !overlay || !btn) return;
+
+            function hideOverlay() {
+                overlay.classList.add('hidden');
+            }
+
+            // If autoplay succeeded, hide overlay after a short delay
+            video.addEventListener('playing', function onPlaying() {
+                setTimeout(hideOverlay, 600);
+                video.removeEventListener('playing', onPlaying);
+            });
+
+            // Click on play button: unmute + ensure playing
+            btn.addEventListener('click', function () {
+                video.muted = false;
+                video.play().catch(function () { video.muted = true; video.play(); });
+                hideOverlay();
+            });
+
+            // Click anywhere on the video wrapper toggles play/pause
+            var wrapper = video.closest('.video-wrapper');
+            if (wrapper) {
+                wrapper.addEventListener('click', function (e) {
+                    if (e.target === btn || btn.contains(e.target)) return;
+                    if (video.paused) { video.play(); } else { video.pause(); }
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>
